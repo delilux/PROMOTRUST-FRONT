@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    base: 'https://nombre.com'
+    base: "http://localhost:8081/"
 }

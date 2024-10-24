@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Nuevo Contrato</h1>
+    <form [formGroup]="form" (ngSubmit)="crearContrato()">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Detalles del contrato</mat-label>
+            <input matInput placeholder="Detalles del contrato" formControlName="detallesContrato" />
+        </mat-form-field>
+  
+        <!-- Campo de estado no editable -->
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Estado</mat-label>
+            <input matInput placeholder="Estado" formControlName="estado" [readonly]="true" />
+        </mat-form-field>
+  
+        <button mat-flat-button color="primary" type="submit">Crear contrato</button>
+    </form>
+  </div>
+  
+  

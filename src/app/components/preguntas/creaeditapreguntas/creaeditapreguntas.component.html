@@ -1,0 +1,28 @@
+<div>
+    <div><h1>Registro de Preguntas</h1></div>
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!-- Campo para la descripción de la pregunta -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripción de la Pregunta</mat-label>
+        <input matInput formControlName="descripcionPreguntas" placeholder="Ingresa la descripción de la pregunta">
+        <mat-error *ngIf="form.get('descripcionPreguntas')?.invalid">Este campo es obligatorio</mat-error>
+      </mat-form-field>
+      <br />
+  
+      <!-- Selección del id de evaluación -->
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona una Evaluación</mat-label>
+        <mat-select formControlName="idEvaluacion">
+          <mat-option *ngFor="let evaluacion of listaEvaluaciones" [value]="evaluacion.value">
+            {{ evaluacion.viewValue }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('idEvaluacion')?.invalid">Debes seleccionar una evaluación</mat-error>
+      </mat-form-field>
+  
+      <!-- Botón para registrar -->
+      <div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+      </div>
+    </form>
+  

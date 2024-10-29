@@ -34,6 +34,16 @@ export class ListarUsuarioComponent implements OnInit {
     this.uS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+
+    
+  }
+ 
+  eliminar(id: number) {
+    this.uS.eliminar(id).subscribe((data) => {
+      this.uS.list().subscribe((data) => {
+        this.uS.setList(data);
+      });
+    });
   }
 
 }

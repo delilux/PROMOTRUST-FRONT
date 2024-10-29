@@ -47,7 +47,7 @@
   display: flex;
 }
 
-button[mat-flat-button] {
+button[mat-button] {
   background-color: #d372f4;
   color: white;
   font-weight: bold;

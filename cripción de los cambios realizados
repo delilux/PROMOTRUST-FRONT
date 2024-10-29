@@ -1,0 +1,323 @@
+[33mcommit 05701f1c5d7009c6f3f2711e6e675b259958cb82[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mRodrigo_Huarcaya[m[33m, [m[1;31morigin/Rodrigo_Huarcaya[m[33m)[m
+Author: RodrigoH <rodrigo7890alv@gmail.com>
+Date:   Tue Oct 22 15:04:23 2024 -0500
+
+    Preguntas e Incidencias
+
+[33mcommit 64bd140f6fb046d970a12e22a31cee85ec6ed13d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Bullsau <118704280+rodrigomv04@users.noreply.github.com>
+Date:   Mon Oct 21 23:56:56 2024 -0500
+
+    Carreando a los payasos
+
+[33mcommit c0f6fe28c61cbb045364dd3a395e115e656e2d3b[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:28:13 2024 -0500
+
+    Create listar-roles.component.css
+
+[33mcommit 726830af5a4461cd2eccef9582259f3f0f2b0209[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:28:10 2024 -0500
+
+    Create listar-roles.component.html
+
+[33mcommit 62ed02adda57cce5f6a6d51c7088d192de9ceed3[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:28:07 2024 -0500
+
+    Create listar-roles.component.spec.ts
+
+[33mcommit 85ab4acf7403667cb136bf30de1b3a7ab5265b9e[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:28:05 2024 -0500
+
+    Create listar-roles.component.ts
+
+[33mcommit 2f41faca018ca64323602cea24e89496f4d4a7f4[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:28:02 2024 -0500
+
+    Create roles.component.css
+
+[33mcommit 54b5f53832f987deb7df3cf756483f8dae113e4e[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:58 2024 -0500
+
+    Create roles.component.html
+
+[33mcommit 5a3e161f294fd7e4f5483ebd047e812aa1923e9b[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:56 2024 -0500
+
+    Create roles.component.ts
+
+[33mcommit 4e44021acb95026b180165edc09b2487ba0f7bcc[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:54 2024 -0500
+
+    Create listar-tips.component.css
+
+[33mcommit b509d53d243d3606aa20e922001b3442f04e7d9b[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:51 2024 -0500
+
+    Create listar-tips.component.html
+
+[33mcommit 58d78f1ef28fc58700a999e8167ed4aba4c19cbc[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:47 2024 -0500
+
+    Create listar-tips.component.spec.ts
+
+[33mcommit 0790c4d87a960d85ab380e90f83418e68134a55b[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:45 2024 -0500
+
+    Create listar-tips.component.ts
+
+[33mcommit 7bb5589d163bd6cd09bc38f76203904dd2d71f71[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:43 2024 -0500
+
+    Create tips.component.css
+
+[33mcommit dd6aa36dd2a12ecb827790de09254d1c6241258a[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:41 2024 -0500
+
+    Create tips.component.html
+
+[33mcommit fb18f3576352ce6cb7a9c084f4ec35444eb71fea[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:38 2024 -0500
+
+    Create tips.component.ts
+
+[33mcommit 74c30441e13edf80feca100963ee3cb6d40f6c30[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:36 2024 -0500
+
+    Delete users.component.css
+
+[33mcommit 92d9e9e80e7e1c813fa9338f0ea9d8baf60b1c38[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:32 2024 -0500
+
+    Delete users.component.html
+
+[33mcommit 1fb38cfcd12d39cdb118aa044d7427f9282b36ff[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:24 2024 -0500
+
+    Delete users.component.ts
+
+[33mcommit 3d2b7a599f5e10923db9bf0e2d3d16ee049bb4fd[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:17 2024 -0500
+
+    Create listar-usuario.component.css
+
+[33mcommit 6b17c1760c5435c9092cd15283f3b350373c93b7[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:14 2024 -0500
+
+    Create listar-usuario.component.html
+
+[33mcommit 1c3d2fb013431142e117a97e5431a0e0b59f7089[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:12 2024 -0500
+
+    Create listar-usuario.component.ts
+
+[33mcommit f91ac74ee0246e9a9ba8800003cb2153567e2b6f[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:08 2024 -0500
+
+    Create usuario.component.css
+
+[33mcommit a3433cd9571a2da62da6b316ebe6b91e31abf955[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:06 2024 -0500
+
+    Create usuario.component.html
+
+[33mcommit 2629d7750d61852bcfebe6215566478a52e8eb4a[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:04 2024 -0500
+
+    Create usuario.component.ts
+
+[33mcommit 5449ea254d20be5bdc1d31e23b2671af798703db[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:02 2024 -0500
+
+    Update roles.ts
+
+[33mcommit aef229562b27adc14d197be0f8d28efc32585fd9[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:27:00 2024 -0500
+
+    Update usuario.ts
+
+[33mcommit 4ef46ff7450e202019858236fcd3511a7ad3a683[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:26:58 2024 -0500
+
+    Create roles.service.ts
+
+[33mcommit fb32963097922cceae2a27e1b924af0cc64d2b64[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:26:52 2024 -0500
+
+    Update tips.service.ts
+
+[33mcommit 570f070b2e196ae93f41f1a47635d1f5e6528773[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:26:48 2024 -0500
+
+    Create usuario.service.ts
+
+[33mcommit 4e57e1644a0286f910bda6f53fd25900dd64957e[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:26:46 2024 -0500
+
+    Update environment.ts
+
+[33mcommit ddab49d966d5b0cdc9c0ce8dc497cb051f647413[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 21:26:42 2024 -0500
+
+    Update contratousuario.ts
+
+[33mcommit f35863e331d15eeb7fb3fb85a60d90007929995d[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 19:54:04 2024 -0500
+
+    update services tips
+
+[33mcommit 4c692b2893d8ae8bc9eb8926a6e9ff837c555651[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 19:53:20 2024 -0500
+
+    create models roles
+
+[33mcommit 00ac787bc3e29edf03f76a98b8c9f4d6eb035806[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 00:12:04 2024 -0500
+
+    crear service tips
+
+[33mcommit ad3db5b08e0346d5403193729a413f49dbbafc91[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Mon Oct 21 00:11:49 2024 -0500
+
+    crear tips.ts
+
+[33mcommit 4e37f5d68f2f8f22e42c05e87cb23feee8cf3ff8[m
+Merge: 6480e4a 5ad99f1
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Sun Oct 20 22:53:40 2024 -0500
+
+    Merge remote-tracking branch 'origin/Delia' into Maria-Vallejos
+
+[33mcommit 5ad99f15ae5788d84666b660628a9a6b82a77d73[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:39:36 2024 -0500
+
+    Create metricas.service.ts
+    
+    Creación de método list() para esta entidad.
+
+[33mcommit bcee01e85a376b19b3e579035c66d8889746d9ed[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:39:11 2024 -0500
+
+    Create contrato.service.ts
+    
+    Creación de método list() para esta entidad
+
+[33mcommit 370962d2f3ae7d46adf38ad42bf8f456719ba07c[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:38:54 2024 -0500
+
+    Create contratousuario.service.ts
+    
+    Creación de método list() para esta entidad.
+
+[33mcommit e268b93f0c358c08ee346904bd48d080d562a8cc[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:38:27 2024 -0500
+
+    Create environment.ts
+    
+    Conexión con backend. Pendiente actualizar enlace de variable base.
+
+[33mcommit 188bacc5c2c95b28f2688ca5fa3da6b94a725496[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:35:02 2024 -0500
+
+    Create usuario.ts
+    
+    Creacion de models usuario. Pendiente atributos. Se creo porque contratousuario es dependiente de esta tabla.
+
+[33mcommit 16874267c8103143b7254ee89fe6b34b3ce9f7e7[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:34:19 2024 -0500
+
+    Create metricas.ts
+    
+    Creacion de models metricas con atributos de la entidad.
+
+[33mcommit 89a359aad6d35a91ed612f1409d7d57e33c821c6[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:34:00 2024 -0500
+
+    Create contratousuario.ts
+    
+    Creacion de models contratousuario con atributos de la entidad.
+
+[33mcommit 2594130292f0ea762e4d5f56fa386a0a6f164621[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:33:36 2024 -0500
+
+    Create contrato.ts
+    
+    Creacion de models contratos con atributos de la entidad.
+
+[33mcommit 21cf254bfe85441fdf2c5760086a5027a7c1bfbf[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:27:15 2024 -0500
+
+    Componente users
+    
+    Archivos css, html y ts bases para el componente usuario en la app web.
+
+[33mcommit e0e4c41f45405f2b95e5b27f8d7f24c588680db4[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:26:34 2024 -0500
+
+    Componente login
+    
+    Archivos CSS, html y ts bases para componente login de la app web.
+
+[33mcommit 821d149e7d2fcd72371c4bc222ae0cd8263d7cb7[m
+Author: delilux <142470442+delilux@users.noreply.github.com>
+Date:   Sun Oct 20 22:25:45 2024 -0500
+
+    Modificaciones bases para el proyecto
+    
+    Modificaciones de Mafer en app.component.html e index.html
+    Modificaciones en app.config.ts para HttpClient
+
+[33mcommit 6480e4ae1b3a7533e1f43cc393886413762b0b81[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Sun Oct 20 21:03:12 2024 -0500
+
+    Creacion
+
+[33mcommit ee940b147713d4c56ba32a2ab71a24337bd3fd07[m
+Author: MafiiVr <vallejosr.mafer@gmail.com>
+Date:   Sun Oct 20 13:04:06 2024 -0500
+
+    Initial commit

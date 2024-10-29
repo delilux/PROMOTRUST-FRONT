@@ -3,6 +3,8 @@ import { ContratousuarioComponent } from './components/contratousuario/contratou
 import { MetricasComponent } from './components/metricas/metricas.component';
 import { ContratoComponent } from './components/contrato/contrato.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { InsertarUsuarioComponent } from './components/usuario/insertar-usuario/insertar-usuario.component';
 
 
 export const routes: Routes = [
@@ -21,6 +23,13 @@ export const routes: Routes = [
     {
         path:'contrato',component:ContratoComponent
     },
-
+//usuario
+{
+    path: 'listarusuario', component: UsuarioComponent,
+    children: [
+        { path: 'insertarusuario', component: InsertarUsuarioComponent},
+        
+    ],
+},
 
 ];

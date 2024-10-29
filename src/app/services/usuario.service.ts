@@ -25,6 +25,9 @@ export class UsuarioService {
     return this.listacambio.asObservable()
   }
 
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 
   listId(id:number) {
     return this.http.get<Usuario>(`${this.url}/${id}`);

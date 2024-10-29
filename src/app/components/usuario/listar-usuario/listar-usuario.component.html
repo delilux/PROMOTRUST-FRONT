@@ -1,1 +1,38 @@
-<p>listar-usuario works!</p>
+<div class="container">
+    <div class="title-container">
+      <h1 class="title">Lista de Usuarios</h1>
+    </div>
+  
+    <div class="card-grid">
+      <div *ngFor="let usuario of dataSource.data" class="card-item">
+        <mat-card class="example-card" style="border: 2px solid black; border-radius: 3%;">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title class="mat-card-title "> Usuario: {{ usuario.id  }}</mat-card-title>
+  
+          </mat-card-header>
+  
+          <mat-card-content>
+            <img mat-card-image class="small-image" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg" alt="user icono" >
+            <p>Nombre de usuario: {{ usuario.nombre  }}</p>
+            <br />
+            <p>Apellido: {{ usuario.apellidos }}</p>
+            <br />
+            <p>RUC: {{ usuario.RUC }}</p>
+            <br />
+            <p>Celular: {{ usuario.telefono  }}</p>
+            <br />
+            <p>Correo: {{ usuario.correo }}</p>
+          </mat-card-content>
+  
+          
+  
+          
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+  <br />
+  
+  

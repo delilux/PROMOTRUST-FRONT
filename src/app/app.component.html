@@ -11,13 +11,21 @@
     <a mat-button routerLink="/contratousuario">Mis Contratos</a>
     <a mat-button routerLink="/evaluaciones">Mis Evaluaciones</a>
     <a mat-button routerLink="/reportar">Reportar</a>
+
   </div>
 
   <!-- Botón de Perfil -->
   <div class="profile-button">
     <button mat-flat-button color="primary">Mi Perfil →</button>
+    <button mat-button class="custom-button"[matMenuTriggerFor]="Usuario" ><mat-icon>person</mat-icon>Usuario</button>
   </div>
 </mat-toolbar>
+
+<!--usuario-->
+<mat-menu #Usuario="matMenu">
+  <button mat-menu-item routerLink="/listarusuario"><mat-icon>view_list</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/listarusuario/insertarusuario"><mat-icon>add_circle</mat-icon>Registrar</button>
+</mat-menu>
 
 <router-outlet></router-outlet>
 

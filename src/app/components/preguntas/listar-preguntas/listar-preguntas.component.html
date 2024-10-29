@@ -1,6 +1,6 @@
-<div>
+<div class="container" >
     <div style="text-align: center;margin: 10px;">
- <h1> Lista de ambientes </h1>
+ <h1> Lista de Preguntas </h1>
     </div>
 
 <h1>
@@ -18,14 +18,29 @@
         <td mat-cell *matCellDef="let pregunta"> {{pregunta.descripcionPreguntas}} </td>
       </ng-container>
   
-
-      
       <!-- Columna Evaluación -->
       <ng-container matColumnDef="c3">
         <th mat-header-cell *matHeaderCellDef> Evaluación </th>
-        <td mat-cell *matCellDef="let pregunta"> {{pregunta.evaluacion}} </td>
+        <td mat-cell *matCellDef="let pregunta"> {{pregunta.evaluacion.id}} </td>
       </ng-container>
   
+
+      <ng-container matColumnDef="accion01">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let pregunta" (click)="eliminar(pregunta.id)">
+          <mat-icon style="color:#3b1d9e">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accion02">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let pregunta">
+          <button mat-raised-button [routerLink]="['ediciones',pregunta.id]">
+            <mat-icon style="color:#3b1d9e">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>

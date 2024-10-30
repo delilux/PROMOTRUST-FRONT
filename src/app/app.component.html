@@ -1,0 +1,27 @@
+<mat-toolbar class="custom-toolbar">
+  <!-- Logo e Identidad -->
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="PROMOTRUST" class="logo">
+    <span class="app-title">PROMOTRUST</span>
+  </div>
+
+  <!-- Menú de Navegación -->
+  <div class="nav-links">
+    <a mat-button routerLink="/bienvenido">Inicio</a>
+    <a mat-button routerLink="/contratousuario">Mis Contratos</a>
+    <a mat-button routerLink="/evaluaciones">Mis Evaluaciones</a>
+    <a mat-button routerLink="/reportar">Reportar</a>
+
+  </div>
+
+  <!-- Botón de Perfil -->
+  <div class="profile-button">
+    <button mat-button routerLink="/listarusuario" > Mi perfil  → </button>
+  </div>
+</mat-toolbar>
+
+
+
+<router-outlet></router-outlet>
+
+  

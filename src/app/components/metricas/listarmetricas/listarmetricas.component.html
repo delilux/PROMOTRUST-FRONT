@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="header">
+      <h1>Rendimiento</h1>
+    </div>
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z5">
+        <!-- ID Column -->
+        <ng-container matColumnDef="c1">
+          <th mat-header-cell *matHeaderCellDef> Contrato ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.contrato.id}} </td>
+        </ng-container>
+  
+        <!-- Detalles Contrato Column -->
+        <ng-container matColumnDef="c3">
+          <th mat-header-cell *matHeaderCellDef> Alcance</th>
+          <td mat-cell *matCellDef="let element"> {{element.alcancepersonas}} </td>
+        </ng-container>
+  
+        <!-- Fecha Inicio Column -->
+        <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef> Ingresos generados </th>
+          <td mat-cell *matCellDef="let element"> {{element.ingresosgenerados}} </td>
+        </ng-container>
+  
+        <!-- Fecha Fin Column -->
+        <ng-container matColumnDef="c5">
+          <th mat-header-cell *matHeaderCellDef> Likes </th>
+          <td mat-cell *matCellDef="let element"> {{element.likes}} </td>
+        </ng-container>
+  
+        <!-- Estado Column -->
+        <ng-container matColumnDef="c6">
+          <th mat-header-cell *matHeaderCellDef> Comentarios </th>
+          <td mat-cell *matCellDef="let element"> {{element.comentarios}} </td>
+        </ng-container>
+
+        <!-- Estado Column -->
+        <ng-container matColumnDef="c7">
+            <th mat-header-cell *matHeaderCellDef> Compartidos </th>
+            <td mat-cell *matCellDef="let element"> {{element.compartidos}} </td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>

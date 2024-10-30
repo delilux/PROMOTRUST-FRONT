@@ -11,7 +11,6 @@ import { IncidenciasComponent } from './components/incidencias/incidencias.compo
 import { CreaeditaincidenciasComponent } from './components/incidencias/creaeditaincidencias/creaeditaincidencias.component';
 
 
-
 export const routes: Routes = [
     {
         path: '', redirectTo: '/bienvenido', pathMatch: 'full'
@@ -21,6 +20,27 @@ export const routes: Routes = [
     },
     {
         path:'contratousuario',component:ContratousuarioComponent
+    },{
+        path: 'preguntas', component: PreguntasComponent,
+        children: [
+            {
+                path: 'nuevo', component: CreaeditapreguntasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditapreguntasComponent
+            }
+        ]
+    },
+    {
+        path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
+        children: [
+            {
+                path: 'nuevo', component: CreaeditaincidenciasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditaincidenciasComponent
+            }
+        ]
     },
     {
         path:'vermetricas',component:MetricasComponent

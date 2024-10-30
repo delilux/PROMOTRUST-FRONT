@@ -16,16 +16,11 @@
 
   <!-- Botón de Perfil -->
   <div class="profile-button">
-    <button mat-flat-button color="primary">Mi Perfil →</button>
-    <button mat-button class="custom-button"[matMenuTriggerFor]="Usuario" ><mat-icon>person</mat-icon>Usuario</button>
+    <button mat-button routerLink="/listarusuario" > Mi perfil  → </button>
   </div>
 </mat-toolbar>
 
-<!--usuario-->
-<mat-menu #Usuario="matMenu">
-  <button mat-menu-item routerLink="/listarusuario"><mat-icon>view_list</mat-icon>Listar</button>
-  <button mat-menu-item routerLink="/listarusuario/insertarusuario"><mat-icon>add_circle</mat-icon>Registrar</button>
-</mat-menu>
+
 
 <router-outlet></router-outlet>
 

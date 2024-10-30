@@ -74,13 +74,39 @@ export const routes: Routes = [
             }
         ]
     },
+
+    {
+        path:'preguntas',component:PreguntasComponent  ,
+        children:[
+            {
+                path:'nuevo',component:CreaeditapreguntasComponent
+            },
+            {
+                path:'ediciones/:id',component:CreaeditapreguntasComponent,
+            },
+        ],
+    },
+   
+    {
+        path: 'incidendias', component: IncidenciasComponent,
+        children:[
+            {
+                path:'nuevo',component:CreaeditaincidenciasComponent,
+            }, 
+            {
+                path:'ediciones/:id',component:CreaeditaincidenciasComponent,
+            },
+        ],
+    },
+    
 //usuario
-{
+    {
     path: 'listarusuario', component: UsuarioComponent,
     children: [
         { path: 'insertarusuario', component: InsertarUsuarioComponent},
         
     ],
-},
+     },
+
 
 ];

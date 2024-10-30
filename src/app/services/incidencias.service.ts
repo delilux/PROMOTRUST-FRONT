@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { incidencias } from '../models/incidencias';
+import { Incidencias } from '../models/incidencias';
+ import { Subject } from 'rxjs';
+ import { Observable } from 'rxjs';
 
 const base_url = environment.base
 @Injectable({
@@ -10,8 +12,31 @@ const base_url = environment.base
 export class IncidenciasService {
   private url = `${base_url}/incidencias`; 
 
+  private listaCambio=new Subject<Incidencias[]>();
+
+
   constructor(private http: HttpClient) { }
-  list() {
-    return this.http.get<incidencias[]>(this.url)
+  list():Observable<Incidencias[]>{
+    return this.http.get<Incidencias[]>(this.url)
+  }
+  insert(ro:Incidencias){
+    return this.http.post(this.url,ro);
+  }
+  setList(listaNueva:Incidencias[]){
+    this.listaCambio.next(listaNueva)
+  }
+  getList(){
+    return this.listaCambio.asObservable();
+  }
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  listId(id: number) {
+    return this.http.get<Incidencias>(`${this.url}/${id}`);
+  }
+
+  update(r: Incidencias) {
+    return this.http.put(this.url, r);
   }
 }

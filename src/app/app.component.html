@@ -12,15 +12,34 @@
     <a mat-button routerLink="/evaluaciones">Mis Evaluaciones</a>
     <a mat-button routerLink="/reportar">Reportar</a>
 
+   
+  <!-- Menú Desplegable de Preguntas -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuPreguntas" aria-label="Menú de Preguntas">Preguntas</button>
   </div>
 
+  <!-- Menú Desplegable de Incidencias -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuIncidencias" aria-label="Menú de Incidencias">Incidencias</button>
+  </div>
+</div>
   <!-- Botón de Perfil -->
   <div class="profile-button">
     <button mat-button routerLink="/listarusuario" > Mi perfil  → </button>
   </div>
 </mat-toolbar>
 
+<!-- Menú MatMenu para Preguntas -->
+<mat-menu #menuPreguntas="matMenu">
+  <button mat-menu-item routerLink="/preguntas" aria-label="Listar Preguntas">Listar</button>
+  <button mat-menu-item routerLink="/preguntas/nuevo" aria-label="Registrar Pregunta">Registrar</button>
+</mat-menu>
 
+<!-- Menú MatMenu para Incidencias -->
+<mat-menu #menuIncidencias="matMenu">
+  <button mat-menu-item routerLink="/incidencias" aria-label="Listar Incidencias">Listar</button>
+  <button mat-menu-item routerLink="/incidencias/nuevo" aria-label="Registrar Incidencia">Registrar</button>
+</mat-menu>
 
 <router-outlet></router-outlet>
 

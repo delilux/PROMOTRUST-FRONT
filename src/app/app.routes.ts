@@ -5,6 +5,10 @@ import { ContratoComponent } from './components/contrato/contrato.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { InsertarUsuarioComponent } from './components/usuario/insertar-usuario/insertar-usuario.component';
+import { PreguntasComponent } from './components/preguntas/preguntas.component';
+import { CreaeditapreguntasComponent } from './components/preguntas/creaeditapreguntas/creaeditapreguntas.component';
+import { IncidenciasComponent } from './components/incidencias/incidencias.component';
+import { CreaeditaincidenciasComponent } from './components/incidencias/creaeditaincidencias/creaeditaincidencias.component';
 
 
 export const routes: Routes = [
@@ -16,6 +20,27 @@ export const routes: Routes = [
     },
     {
         path:'contratousuario',component:ContratousuarioComponent
+    },{
+        path: 'preguntas', component: PreguntasComponent,
+        children: [
+            {
+                path: 'nuevo', component: CreaeditapreguntasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditapreguntasComponent
+            }
+        ]
+    },
+    {
+        path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
+        children: [
+            {
+                path: 'nuevo', component: CreaeditaincidenciasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditaincidenciasComponent
+            }
+        ]
     },
     {
         path:'vermetricas',component:MetricasComponent

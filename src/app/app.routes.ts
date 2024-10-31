@@ -50,11 +50,10 @@ export const routes: Routes = [
     },
 //usuario
 {
-    path: 'listarusuario', component: UsuarioComponent,
+    path: 'usuario', component: UsuarioComponent,
     children: [
         { path: 'insertarusuario', component: InsertarUsuarioComponent},
-        
+        { path: 'ediciones/:id', component: InsertarUsuarioComponent},  
     ],
 },
-
-];
+]

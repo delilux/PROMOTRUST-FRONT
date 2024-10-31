@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tips } from '../models/Tips';
 import { environment } from '../../environments/environment';
+import { Tips } from '../models/Tips';
 
 const base_url = environment.base
 @Injectable({

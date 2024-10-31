@@ -1,7 +1,7 @@
 <mat-toolbar class="custom-toolbar">
   <!-- Logo e Identidad -->
   <div class="logo-container">
-    <img src="assets/logo.png" alt="PROMOTRUST" class="logo">
+    <img src="../assets/logo.png" alt="PROMOTRUST" class="logo">
     <span class="app-title">PROMOTRUST</span>
   </div>
 
@@ -22,12 +22,19 @@
   <div>
     <button mat-button [matMenuTriggerFor]="menuIncidencias" aria-label="Menú de Incidencias">Incidencias</button>
   </div>
-</div>
-  <!-- Botón de Perfil -->
-  <div class="profile-button">
-    <button mat-button routerLink="/listarusuario" > Mi perfil  → </button>
+  <!-- Menú Desplegable de Usuarios -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuUsuario" aria-label="Menú de Incidencias">Usuarios</button>
   </div>
+</div>
+  
 </mat-toolbar>
+
+<!-- Botón de Perfil -->
+<mat-menu #menuUsuario="matMenu">
+  <button mat-menu-item routerLink="/usuario"><mat-icon>view_list</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/usuario/insertarusuario"><mat-icon>add_circle</mat-icon>Registrar</button>
+</mat-menu>
 
 <!-- Menú MatMenu para Preguntas -->
 <mat-menu #menuPreguntas="matMenu">

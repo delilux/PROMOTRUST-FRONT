@@ -1,1 +1,87 @@
+<div class="container" style="text-align: center;margin:10%">
+  <div style="margin:5%"><h1>Registro de Usuario</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
 
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput  formControlName="codigo" />
+
+      </mat-form-field>
+      <br />
+
+
+
+      <mat-form-field class="example-full-width" >
+        <mat-label>Nombre </mat-label>
+        <input matInput  formControlName="nombre"/>
+
+      </mat-form-field>
+      <br />
+
+
+
+
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="contrasenia">
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br />
+     
+
+    
+      <mat-form-field class="example-full-width" >
+        <mat-label>Apellido </mat-label>
+        <input matInput  formControlName="apellidos" />
+
+      </mat-form-field>
+      <br />
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>Telfono </mat-label>
+          <input matInput  formControlName="telefono" />
+  
+        </mat-form-field>
+        <br />
+
+
+
+
+        <mat-form-field class="example-full-width" >
+          <mat-label> Correo  </mat-label>
+          <input matInput  formControlName="correo" />
+          
+        </mat-form-field>
+        <br />
+
+
+
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>RUC </mat-label>
+          <input matInput  formControlName="ruc" />
+         
+        </mat-form-field>
+        <br />
+
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Selecciona Tip</mat-label>
+          <mat-select formControlName="tips">@for(food of listatips; track food) {
+             <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+          </mat-select>
+        </mat-form-field>
+      <br />
+
+      <div>
+        <button mat-button class="custom-button">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

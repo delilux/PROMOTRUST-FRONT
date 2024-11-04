@@ -9,6 +9,8 @@ import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { CreaeditapreguntasComponent } from './components/preguntas/creaeditapreguntas/creaeditapreguntas.component';
 import { IncidenciasComponent } from './components/incidencias/incidencias.component';
 import { CreaeditaincidenciasComponent } from './components/incidencias/creaeditaincidencias/creaeditaincidencias.component';
+import { TipsComponent } from './components/tips/tips.component';
+import { CreaditatipsComponent } from './components/tips/creaditatips/creaditatips.component';
 
 
 export const routes: Routes = [
@@ -48,12 +50,30 @@ export const routes: Routes = [
     {
         path:'contrato',component:ContratoComponent
     },
+    {
+        path:'vertips',component:TipsComponent,
+        children: [
+            {
+                path: 'nuevo', component: CreaditatipsComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaditatipsComponent
+            }
+        ],
+        
+    },
+
+
 //usuario
 {
     path: 'usuario', component: UsuarioComponent,
     children: [
-        { path: 'insertarusuario', component: InsertarUsuarioComponent},
-        { path: 'ediciones/:id', component: InsertarUsuarioComponent},  
+        {
+            path: 'nuevo', component: InsertarUsuarioComponent
+        },
+        {
+            path: 'ediciones/:id', component: InsertarUsuarioComponent
+        }
     ],
 },
 ]

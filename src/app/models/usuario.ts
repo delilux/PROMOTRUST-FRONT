@@ -8,5 +8,6 @@ export class Usuario {
      telefono:number=0;
      correo:string="";
      RUC:string="";
-     TipsDTO:Tips=new Tips();
+     enabled: boolean = true;
+     tips: Tips=new Tips();
 }

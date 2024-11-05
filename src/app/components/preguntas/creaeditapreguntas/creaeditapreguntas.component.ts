@@ -10,21 +10,28 @@ import {
   Validators,
   FormControl,
  } from '@angular/forms';
+ import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { PreguntasService } from '../../../services/preguntas.service';
 import { Preguntas } from '../../../models/preguntas';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { EvaluacionService } from '../../../services/evaluacion.service';
+import { Evaluacion } from '../../../models/evaluacion';
 
 
 @Component({
   selector: 'app-creaeditapreguntas',
   standalone: true,
+  providers: [provideNativeDateAdapter()],
   imports: [
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatButtonModule,
+    
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatButtonModule,
     CommonModule,
   ],
   templateUrl: './creaeditapreguntas.component.html',
@@ -35,21 +42,18 @@ export class CreaeditapreguntasComponent implements OnInit {
   pregunta: Preguntas = new Preguntas();
   id: number = 0;
   edicion: boolean = false;
+ 
 
-  listaEvaluaciones: { value: number, viewValue: string }[] = [
-    { value: 1, viewValue: '1' },
-    { value: 2, viewValue: '2'  },
-    { value: 3, viewValue: '3'  },
-    // Agrega más evaluaciones según sea necesario
-  ];
+  listaEvaluacion:Evaluacion[]=[];
 
   constructor(
     private rs: PreguntasService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private  es:EvaluacionService
     
-  ) { }
+  ){}
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -60,8 +64,11 @@ export class CreaeditapreguntasComponent implements OnInit {
     this.form = this.formBuilder.group({
       Hcodigo:[''],
       HdescripcionPreguntas: ['', Validators.required],  // Campo de texto para descripción
-      HidEvaluacion: ['', Validators.required]  // Selección del id de evaluación
+      HidEvaluacion: ['', Validators.required],  // Selección del id de evaluación
     });
+    this.es.list().subscribe(data=>{
+      this.listaEvaluacion=data
+    })
   }
 
   aceptar(): void {
@@ -70,9 +77,9 @@ export class CreaeditapreguntasComponent implements OnInit {
       this.pregunta.descripcionPreguntas = this.form.value.HdescripcionPreguntas;  // Asigna la descripción de la pregunta
       this.pregunta.evaluacion.id = this.form.value.HidEvaluacion;  // Asigna el id de evaluación
     if(this.edicion){  
-      this.rs.insert(this.pregunta).subscribe(() => {
-        this.rs.list().subscribe(d => {
-          this.rs.setList(d)  // Actualiza la lista de preguntas
+      this.rs.update(this.pregunta).subscribe((data) => {
+        this.rs.list().subscribe(data => {
+          this.rs.setList(data)  // Actualiza la lista de preguntas
         
         });
       });
@@ -93,8 +100,7 @@ this.rs.list().subscribe((d)=>{
         this.form = new FormGroup({
           Hcodigo: new FormControl(data.id),
           HdescripcionPreguntas: new FormControl(data.descripcionPreguntas),
-          HidEvaluacion: new FormControl(data.evaluacion.id),
-          
+          HidEvaluacion: new FormControl(data.evaluacion.id),  
         });
       });
     }

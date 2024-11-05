@@ -26,11 +26,22 @@
   <div>
     <button mat-button [matMenuTriggerFor]="menuUsuario" aria-label="Menú de Incidencias">Usuarios</button>
   </div>
-
+  <!-- Menú Desplegable de Incidencias -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuEvaluaciones" aria-label="Menú de Evaluaciones">Evaluacion</button>
+  </div>
+   <!-- Menú Desplegable de Incidencias -->
+   <div>
+    <button mat-button [matMenuTriggerFor]="menuServicios" aria-label="Menú de Servicios">Servicios</button>
+  </div>
+  <!-- Menú Desplegable de Incidencias -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuTips" aria-label="Menú de Servicios">Tips</button>
+  </div>
   <div>
 
   </div>
-
+  
 </div>
   
 </mat-toolbar>
@@ -56,6 +67,18 @@
 <mat-menu #menuTips="matMenu">
   <button mat-menu-item routerLink="/vertips" aria-label="Listar Tips">Listar</button>
   <button mat-menu-item routerLink="/vertips/nuevo" aria-label="Registrar Tips">Registrar</button>
+</mat-menu>
+
+<!-- Menú MatMenu para Evaluacion -->
+<mat-menu #menuEvaluaciones="matMenu">
+  <button mat-menu-item routerLink="/evaluacion" aria-label="Listar Evaluaciones">Listar</button>
+  <button mat-menu-item routerLink="/evaluacion/nuevo" aria-label="Registrar Evaluaciones">Registrar</button>
+</mat-menu>
+
+<!-- Menú MatMenu para Servicios -->
+<mat-menu #menuServicios="matMenu">
+  <button mat-menu-item routerLink="/servicio" aria-label="Listar Servicios">Listar</button>
+  <button mat-menu-item routerLink="/servicio/nuevo" aria-label="Registrar Servicios">Registrar</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

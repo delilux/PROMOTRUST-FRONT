@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Tips } from '../../../models/Tips';
+import { Tips } from '../../../models/tips';
 import { RouterModule } from '@angular/router';
 import { TipsService } from '../../../services/tips.service';
 import { MatSnackBar } from '@angular/material/snack-bar';

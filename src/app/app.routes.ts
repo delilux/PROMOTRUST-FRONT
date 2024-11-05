@@ -11,6 +11,10 @@ import { IncidenciasComponent } from './components/incidencias/incidencias.compo
 import { CreaeditaincidenciasComponent } from './components/incidencias/creaeditaincidencias/creaeditaincidencias.component';
 import { TipsComponent } from './components/tips/tips.component';
 import { CreaditatipsComponent } from './components/tips/creaditatips/creaditatips.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { CreaeditaserviciosComponent } from './components/servicios/creaeditaservicios/creaeditaservicios.component';
+import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
+import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
 
 
 export const routes: Routes = [
@@ -22,7 +26,9 @@ export const routes: Routes = [
     },
     {
         path:'contratousuario',component:ContratousuarioComponent
-    },{
+    },
+    
+    {
         path: 'preguntas', component: PreguntasComponent,
         children: [
             {
@@ -51,8 +57,29 @@ export const routes: Routes = [
         path:'contrato',component:ContratoComponent
     },
     {
-        path:'vertips',component:TipsComponent,
+        path: 'servicio', component: ServiciosComponent,
         children: [
+            {
+                path: 'nuevo', component: CreaeditaserviciosComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditaserviciosComponent
+            }
+        ]
+    }, 
+    {
+        path: 'evaluacion', component:EvaluacionComponent, // corregido el typo aquí
+        children: [
+            {
+                path: 'nuevo', component: CreaeditaevaluacionComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditaevaluacionComponent
+            }
+        ]
+    },
+    {
+        path:'vertips',component:TipsComponent, children: [
             {
                 path: 'nuevo', component: CreaditatipsComponent
             },

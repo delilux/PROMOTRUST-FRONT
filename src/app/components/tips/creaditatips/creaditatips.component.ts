@@ -6,7 +6,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { Tips } from '../../../models/Tips';
+import { Tips } from '../../../models/tips';
 import { TipsService } from '../../../services/tips.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { provideNativeDateAdapter } from '@angular/material/core';
@@ -15,12 +15,16 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   selector: 'app-creaditatips',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [ MatInputModule,
+  imports: [ 
+    MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
+    MatInputModule,
     ReactiveFormsModule,
-    CommonModule,MatDatepickerModule],
+    CommonModule,
+    MatDatepickerModule,
+  ],
   templateUrl: './creaditatips.component.html',
   styleUrl: './creaditatips.component.css'
 })
@@ -34,8 +38,7 @@ export class CreaditatipsComponent  implements OnInit{
     private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
-    
-  ) { }
+  ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -43,22 +46,21 @@ export class CreaditatipsComponent  implements OnInit{
       this.init();
     });
     this.form = this.formBuilder.group({
-      codigo:['', Validators.required],
-      contenido: ['', Validators.required],  // Campo de texto para descripción
-      fecha: ['', Validators.required]  // Selección del id de evaluación
+      hcodigo:['', Validators.required],
+      hcontenido: ['', Validators.required],  // Campo de texto para descripción
+      hfecha: ['', Validators.required]  // Selección del id de evaluación
     });
   }
 
   aceptar(): void {
     if (this.form.valid) {
-      this.tips.id = this.form.value.codigo;
-      this.tips.contenido = this.form.value.contenido;  // Asigna la descripción de la pregunta
-      this.tips.fecha_creacion = this.form.value.fecha;  // Asigna el id de evaluación
+      this.tips.id = this.form.value.hcodigo;
+      this.tips.contenido = this.form.value.hcontenido;  // Asigna la descripción de la pregunta
+      this.tips.fecha_creacion = this.form.value.hfecha;  // Asigna el id de evaluación
     if(this.edicion){  
-      this.ts.insert(this.tips).subscribe(() => {
-        this.ts.list().subscribe(d => {
-          this.ts.setList(d)  // Actualiza la lista de preguntas
-        
+      this.ts.update(this.tips).subscribe((data) => {
+        this.ts.list().subscribe(data => {
+          this.ts.setList(data)  // Actualiza la lista de preguntas
         });
       });
     }else{
@@ -66,7 +68,6 @@ export class CreaditatipsComponent  implements OnInit{
       this.ts.list().subscribe((d)=>{
       this.ts.setList(d);
       });
-
       });
     }
     }
@@ -76,16 +77,11 @@ export class CreaditatipsComponent  implements OnInit{
     if (this.edicion) {
       this.ts.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          codigo: new FormControl(data.id),
-          contenido: new FormControl(data.contenido),
-          fecha: new FormControl(data.fecha_creacion),
-          
+          hcodigo: new FormControl(data.id),
+          hcontenido: new FormControl(data.contenido),
+          hfecha: new FormControl(data.fecha_creacion),
         });
       });
     }
   }
-
-
-
-
 }

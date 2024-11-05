@@ -9,7 +9,7 @@ import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { Usuario } from '../../../models/usuario';
 import { Roles } from '../../../models/roles';
 import { UsuarioService } from '../../../services/usuario.service';
-import { Tips } from '../../../models/Tips';
+import { Tips } from '../../../models/tips';
 import { TipsService } from '../../../services/tips.service';
 import { MatIconModule } from '@angular/material/icon';
 import { provideNativeDateAdapter } from '@angular/material/core';

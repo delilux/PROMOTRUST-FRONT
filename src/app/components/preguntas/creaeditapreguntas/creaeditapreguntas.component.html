@@ -21,16 +21,15 @@
       <br />
   
       <!-- Selección del id de evaluación  -->
-      <mat-form-field appearance="fill">
-        <mat-label>Selecciona una Evaluación</mat-label>
-        <mat-select formControlName="HidEvaluacion">@for(food of listaEvaluaciones; track food) {
-           <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
-        }
+      
+      <mat-form-field>
+        <mat-label>Evaluación</mat-label>
+        <mat-select formControlName="HidEvaluacion">
+          @for (food of listaEvaluacion; track food) {
+          <mat-option [value]="food.id">{{ food.comentarios }}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
-
-   
-
       <!-- Botón para registrar -->
       <div>
 

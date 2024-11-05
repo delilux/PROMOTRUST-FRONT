@@ -1,4 +1,4 @@
-import { Tips } from "./Tips";
+import { Tips } from "./tips";
 
 export class Usuario {
      id: number=0;

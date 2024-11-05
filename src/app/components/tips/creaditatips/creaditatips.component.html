@@ -1,45 +1,43 @@
 <div class="container" style="text-align: center; margin: 5%">
-    <div style="margin: 5%"> <h1>Registro de Tips</h1> </div>
+  <div style="margin: 5%"><h1>Registro de Tips</h1></div>
+
+  <div>
+    <!-- Formulario para registrar incidencias -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!------------------------>
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="hcodigo" readonly />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para la descripción de la pregunta -->
+      <mat-form-field class="example-full-width" >
+        <mat-label>Contenido</mat-label>
+        <input matInput formControlName="hcontenido" />
+      </mat-form-field>
+      <br />
+      <!-- Selección del id de evaluación  -->
+
+      
+
+
+      <mat-form-field>
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="hfecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     
-    <div>
-        <!-- Formulario para registrar incidencias -->
-        <form [formGroup]="form" (ngSubmit)="aceptar()">
-  
-            <!------------------------>
-        <mat-form-field class="example-full-width" *ngIf="edicion">
-          <mat-label>Código</mat-label>
-          <input matInput  formControlName="codigo" readonly />
-  
-        </mat-form-field>
-        <br />
-  
-        <!-- Campo para la descripción de la pregunta -->
-        <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>Contenido</mat-label>
-            <input matInput  formControlName="contenido" />
-    
-          </mat-form-field>
-    
-        <!-- Selección del id de evaluación  -->
-       
-        <br />
-        <mat-form-field>
-            <mat-label>Fecha</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="fecha" />
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle
-              matIconSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <br>
-  
-        <!-- Botón para registrar -->
-        <div>
-  
-          <button mat-button class="custom-button">Registrar</button>      </div>
-      </form>
-    </div>
+
+      <!-- Botón para registrar -->
+      <div>
+        <button mat-button class="custom-button">Registrar</button>
+      </div>
+    </form>
   </div>
-    
+</div>

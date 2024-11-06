@@ -1,49 +1,52 @@
 <div class="container" style="text-align: center; margin: 5%">
-    <div style="margin: 5%">
-      <h1>Registro de Incidencias</h1>
-    </div>
-    
-    <div>
-      <!-- Formulario para registrar incidencias -->
-      <form [formGroup]="form" (ngSubmit)="aceptar()">
-        
-        <!-- Campo para la descripción de la incidencia -->
-        <mat-form-field class="example-full-width">
-          <mat-label>Descripción de la Incidencia</mat-label>
-          <input matInput placeholder="Ej. Fuga de agua" formControlName="descripcionIncidencias" required />
-        </mat-form-field>
-        <br />
-  
-        <!-- Campo para la fecha de la incidencia -->
-        <mat-form-field class="example-full-width">
-          <mat-label>Fecha de la Incidencia</mat-label>
-          <input matInput type="date" formControlName="fechaIncidencia" required />
-        </mat-form-field>
-        <br />
-  
-        <!-- Campo de selección para la ubicación de la incidencia -->
-        <mat-form-field class="example-full-width">
-          <mat-label>Ubicación</mat-label>
-          <mat-select formControlName="hubicacion" required>
-            <mat-option *ngFor="let ubicacion of listaUbicaciones" [value]="ubicacion.value">
-              {{ ubicacion.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <br />
-  
-        <!-- Campo para el ID del contrato -->
-        <mat-form-field class="example-full-width">
-          <mat-label>ID del Contrato</mat-label>
-          <input matInput type="number" placeholder="Ej. 123" formControlName="idContrato" required />
-        </mat-form-field>
-        <br />
-  
-        <!-- Botón para registrar -->
-        <div>
-          <button mat-flat-button color="primary">Registrar  </button>
-        </div>
-      </form>
-    </div>
+  <div style="margin: 5%"> <h1>Registro de Incidencias</h1>
   </div>
   
+  <div>
+    <!-- Formulario para registrar incidencias -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      
+       <!---- -------------------->
+    <mat-form-field class="example-full-width" *ngIf="edicion">
+      <mat-label>Código</mat-label>
+      <input matInput  formControlName="Hcodigo" />
+      
+    </mat-form-field>
+    <br />
+
+
+      <!-- Campo para la descripción de la incidencia -->
+      <mat-form-field class="example-full-width" >
+        <mat-label>Descripción de la Incidencia</mat-label>
+        <input matInput placeholder="Ej. Fuga de agua" formControlName="HdescripcionIncidencias"   />
+      </mat-form-field>
+      <br />
+
+
+      <!-- Campo para la fecha de la incidencia -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de la Incidencia</mat-label>
+        <input matInput type="date" formControlName="Hfecha_Incidencia"   />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para el ID del contrato   listaAmbientes -->
+      <mat-form-field>
+        <mat-label>Contrato</mat-label>
+        <mat-select formControlName="HidContrato">
+          @for (food of listaAmbientes; track food) {
+          <mat-option [value]="food.id">{{ food.detalle_contrato }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+   
+      <!-- Botón para registrar -->
+      <div>
+        <button mat-button class="custom-button">Registrar</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

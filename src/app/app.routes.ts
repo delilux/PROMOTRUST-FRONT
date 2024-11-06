@@ -9,7 +9,12 @@ import { PreguntasComponent } from './components/preguntas/preguntas.component';
 import { CreaeditapreguntasComponent } from './components/preguntas/creaeditapreguntas/creaeditapreguntas.component';
 import { IncidenciasComponent } from './components/incidencias/incidencias.component';
 import { CreaeditaincidenciasComponent } from './components/incidencias/creaeditaincidencias/creaeditaincidencias.component';
-
+import { TipsComponent } from './components/tips/tips.component';
+import { CreaditatipsComponent } from './components/tips/creaditatips/creaditatips.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { CreaeditaserviciosComponent } from './components/servicios/creaeditaservicios/creaeditaservicios.component';
+import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
+import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
 
 
 export const routes: Routes = [
@@ -22,45 +27,80 @@ export const routes: Routes = [
     {
         path:'contratousuario',component:ContratousuarioComponent
     },
+    
+    {
+        path: 'preguntas', component: PreguntasComponent,
+        children: [
+            {
+                path: 'nuevo', component: CreaeditapreguntasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditapreguntasComponent
+            }
+        ]
+    },
+    {
+        path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
+        children: [
+            {
+                path: 'nuevo', component: CreaeditaincidenciasComponent
+            },
+            {
+                path: 'ediciones/:id', component: CreaeditaincidenciasComponent
+            }
+        ]
+    },
     {
         path:'vermetricas',component:MetricasComponent
     },
     {
         path:'contrato',component:ContratoComponent
     },
-
     {
-        path:'preguntas',component:PreguntasComponent  ,
-        children:[
+        path: 'servicio', component: ServiciosComponent,
+        children: [
             {
-                path:'nuevo',component:CreaeditapreguntasComponent
+                path: 'nuevo', component: CreaeditaserviciosComponent
             },
             {
-                path:'ediciones/:id',component:CreaeditapreguntasComponent,
+                path: 'ediciones/:id', component: CreaeditaserviciosComponent
+            }
+        ]
+    }, 
+    {
+        path: 'evaluacion', component:EvaluacionComponent, // corregido el typo aquí
+        children: [
+            {
+                path: 'nuevo', component: CreaeditaevaluacionComponent
             },
-        ],
+            {
+                path: 'ediciones/:id', component: CreaeditaevaluacionComponent
+            }
+        ]
     },
-   
     {
-        path: 'incidendias', component: IncidenciasComponent,
-        children:[
+        path:'vertips',component:TipsComponent, children: [
             {
-                path:'nuevo',component:CreaeditaincidenciasComponent,
-            }, 
-            {
-                path:'ediciones/:id',component:CreaeditaincidenciasComponent,
+                path: 'nuevo', component: CreaditatipsComponent
             },
+            {
+                path: 'ediciones/:id', component: CreaditatipsComponent
+            }
         ],
-    },
-    
-//usuario
-    {
-    path: 'listarusuario', component: UsuarioComponent,
-    children: [
-        { path: 'insertarusuario', component: InsertarUsuarioComponent},
         
+    },
+
+
+//usuario
+{
+    path: 'usuario', component: UsuarioComponent,
+    children: [
+        {
+            path: 'nuevo', component: InsertarUsuarioComponent
+        },
+        {
+            path: 'ediciones/:id', component: InsertarUsuarioComponent
+        }
     ],
-     },
-
-
-];
+},
+]

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
 import { MatTableModule } from '@angular/material/table';
@@ -10,7 +10,7 @@ import { MatTableModule } from '@angular/material/table';
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css'
 })
-export class UsuarioComponent {
+export class UsuarioComponent implements OnInit{
   constructor(public route:ActivatedRoute){}
   ngOnInit():void{}
 

@@ -10,21 +10,28 @@ import {
   Validators,
   FormControl,
  } from '@angular/forms';
+ import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { PreguntasService } from '../../../services/preguntas.service';
 import { Preguntas } from '../../../models/preguntas';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { EvaluacionService } from '../../../services/evaluacion.service';
+import { Evaluacion } from '../../../models/evaluacion';
 
 
 @Component({
   selector: 'app-creaeditapreguntas',
   standalone: true,
+  providers: [provideNativeDateAdapter()],
   imports: [
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatButtonModule,
+    
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatButtonModule,
     CommonModule,
   ],
   templateUrl: './creaeditapreguntas.component.html',
@@ -35,21 +42,18 @@ export class CreaeditapreguntasComponent implements OnInit {
   pregunta: Preguntas = new Preguntas();
   id: number = 0;
   edicion: boolean = false;
+ 
 
-  listaEvaluaciones: { value: number, viewValue: string }[] = [
-    { value: 1, viewValue: 'Evaluación 1' },
-    { value: 2, viewValue: 'Evaluación 2' },
-    { value: 3, viewValue: 'Evaluación 3' },
-    // Agrega más evaluaciones según sea necesario
-  ];
+  listaEvaluacion:Evaluacion[]=[];
 
   constructor(
-    private preguntasService: PreguntasService,
+    private rs: PreguntasService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private  es:EvaluacionService
     
-  ) { }
+  ){}
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -58,32 +62,45 @@ export class CreaeditapreguntasComponent implements OnInit {
       this.init();
     });
     this.form = this.formBuilder.group({
-      descripcionPreguntas: ['', Validators.required],  // Campo de texto para descripción
-      idEvaluacion: ['', Validators.required]  // Selección del id de evaluación
+      Hcodigo:[''],
+      HdescripcionPreguntas: ['', Validators.required],  // Campo de texto para descripción
+      HidEvaluacion: ['', Validators.required],  // Selección del id de evaluación
     });
+    this.es.list().subscribe(data=>{
+      this.listaEvaluacion=data
+    })
   }
 
   aceptar(): void {
     if (this.form.valid) {
-      this.pregunta.descripcionPreguntas = this.form.value.descripcionPreguntas;  // Asigna la descripción de la pregunta
-      this.pregunta.evaluacion.id = this.form.value.idEvaluacion;  // Asigna el id de evaluación
-
-      this.preguntasService.insert(this.pregunta).subscribe(() => {
-        this.preguntasService.list().subscribe(d => {
-          this.preguntasService.setList(d)  // Actualiza la lista de preguntas
+      this.pregunta.id = this.form.value.Hcodigo;
+      this.pregunta.descripcionPreguntas = this.form.value.HdescripcionPreguntas;  // Asigna la descripción de la pregunta
+      this.pregunta.evaluacion.id = this.form.value.HidEvaluacion;  // Asigna el id de evaluación
+    if(this.edicion){  
+      this.rs.update(this.pregunta).subscribe((data) => {
+        this.rs.list().subscribe(data => {
+          this.rs.setList(data)  // Actualiza la lista de preguntas
         
         });
       });
+    }else{
+      this.rs.insert(this.pregunta).subscribe((d)=> {
+this.rs.list().subscribe((d)=>{
+  this.rs.setList(d);
+});
+
+      });
+    }
     }
     this.router.navigate(['preguntas']);  // Redirige a la lista de ambientes
   }
   init() {
     if (this.edicion) {
-      this.preguntasService.listId(this.id).subscribe((data) => {
+      this.rs.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          hcodigo: new FormControl(data.descripcionPreguntas),
-          hambiente: new FormControl(data.evaluacion),
-          hubicacion: new FormControl(data.id),
+          Hcodigo: new FormControl(data.id),
+          HdescripcionPreguntas: new FormControl(data.descripcionPreguntas),
+          HidEvaluacion: new FormControl(data.evaluacion.id),  
         });
       });
     }

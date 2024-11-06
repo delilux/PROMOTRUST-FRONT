@@ -1,0 +1,62 @@
+<div class="container" style="text-align: center;margin:10%">
+    <div style="margin:5%"><h1>Registro de Servicios</h1></div>
+    <div>
+       <!------------------------>
+      <form [formGroup]="form" (submit)="aceptar()">
+ <!------------------------>
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>Código</mat-label>
+            <input matInput  formControlName="hcodigo" />
+            
+          </mat-form-field>
+          <br />
+           <!------------------------>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Ejem. TV" formControlName="hnombre" />
+          </mat-form-field>
+          <br />
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Precio</mat-label>
+            <input matInput placeholder="Ejem. TV" formControlName="hprecio" />
+          </mat-form-field>
+          <br />
+
+          <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="hcategoria"> 
+                @for (food of listaCategoria; track food) {
+                <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Estado</mat-label>
+            <mat-select formControlName="hestado"> 
+                @for (food of listaEstado; track food) {
+                <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <br>
+             
+           <mat-form-field>
+             <mat-label>Contrato</mat-label>
+             <mat-select formControlName="hcontrato">
+               @for (food of listacontrato; track food) {
+               <mat-option [value]="food.id">{{ food.detalle_contrato }}</mat-option>
+               }
+             </mat-select>
+           </mat-form-field>
+           
+           <div>
+             <button mat-button class="custom-button">Registrar</button>
+           </div>
+         </form>
+       </div>
+     </div>
+     
+  

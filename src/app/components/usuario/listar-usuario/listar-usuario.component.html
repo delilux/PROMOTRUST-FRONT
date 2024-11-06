@@ -18,13 +18,21 @@
             <br />
             <p>Apellido: {{ usuario.apellidos }}</p>
             <br />
-            <p>RUC: {{ usuario.RUC }}</p>
+            <p>Ruc: {{usuario.RUC }}</p>
             <br />
             <p>Celular: {{ usuario.telefono  }}</p>
             <br />
             <p>Correo: {{ usuario.correo }}</p>
           </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button class="edit-button" [routerLink]="['ediciones', usuario.id]">
+              <mat-icon>edit</mat-icon>
+            </button>
   
+            <button mat-raised-button class="delete-button"(click)="eliminar(usuario.id)" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-actions>
           
   
           

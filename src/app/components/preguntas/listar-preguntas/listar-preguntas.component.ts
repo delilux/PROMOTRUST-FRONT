@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-listarpreguntas',
   standalone: true,
@@ -39,4 +40,3 @@ displayedColumns:string[]=['c1','c2','c3','accion01','accion02'];
   
     
   }
-  

@@ -40,13 +40,9 @@ export class CreaditatipsComponent  implements OnInit{
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
-      this.edicion = data['id'] != null;
-      this.init();
-    });
+   
     this.form = this.formBuilder.group({
-      hcodigo:['', Validators.required],
+      hcodigo:[''],
       hcontenido: ['', Validators.required],  // Campo de texto para descripción
       hfecha: ['', Validators.required]  // Selección del id de evaluación
     });
@@ -57,19 +53,19 @@ export class CreaditatipsComponent  implements OnInit{
       this.tips.id = this.form.value.hcodigo;
       this.tips.contenido = this.form.value.hcontenido;  // Asigna la descripción de la pregunta
       this.tips.fecha_creacion = this.form.value.hfecha;  // Asigna el id de evaluación
-    if(this.edicion){  
-      this.ts.update(this.tips).subscribe((data) => {
-        this.ts.list().subscribe(data => {
-          this.ts.setList(data)  // Actualiza la lista de preguntas
+      if (this.edicion) {
+        this.ts.update(this.tips).subscribe((data) => {
+          this.ts.list().subscribe((data) => {
+            this.ts.setList(data);
+          });
         });
-      });
-    }else{
-      this.ts.insert(this.tips).subscribe((d)=> {
-      this.ts.list().subscribe((d)=>{
-      this.ts.setList(d);
-      });
-      });
-    }
+      } else {
+        this.ts.insert(this.tips).subscribe((d) => {
+          this.ts.list().subscribe((d) => {
+            this.ts.setList(d);
+          });
+        });
+      }      
     }
     this.router.navigate(['vertips']);  // Redirige a la lista de ambientes
   }

@@ -14,15 +14,12 @@
   
           <mat-card-content>
             <img mat-card-image class="small-image" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg" alt="user icono" >
-            <p>Nombre de usuario: {{ usuario.nombre  }}</p>
-            <br />
-            <p>Apellido: {{ usuario.apellidos }}</p>
-            <br />
-            <p>Ruc: {{usuario.RUC }}</p>
-            <br />
-            <p>Celular: {{ usuario.telefono  }}</p>
-            <br />
-            <p>Correo: {{ usuario.correo }}</p>
+            <mat-card-title>{{ usuario.nombre }} {{ usuario.apellidos }}</mat-card-title>
+            <mat-card-subtitle>{{ usuario.correo }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ usuario.telefono }}</mat-card-subtitle>
+          
+          
+         
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button class="edit-button" [routerLink]="['ediciones', usuario.id]">

@@ -23,7 +23,7 @@ import { UsuarioService } from '../../../services/usuario.service';
   styleUrl: './listar-usuario.component.css'
 })
 export class ListarUsuarioComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'RUC', 'telefono', 'correo'];
+  displayedColumns: string[] = ['nombre', 'apellidos', 'telefono', 'correo','ediciones'];
   dataSource: MatTableDataSource<Usuario> = new MatTableDataSource();
   constructor(private uS: UsuarioService) {}
   ngOnInit(): void {

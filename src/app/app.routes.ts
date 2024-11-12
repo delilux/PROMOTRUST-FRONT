@@ -16,6 +16,7 @@ import { CreaeditaserviciosComponent } from './components/servicios/creaeditaser
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
 import { LoginComponent } from './components/login/login.component';
+import { segGuard } from './guard/seguridad.guard';
 
 
 export const routes: Routes = [
@@ -51,7 +52,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditapreguntasComponent
             }
-        ]
+        ],canActivate: [segGuard],
     },
     {
         path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
@@ -62,7 +63,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaincidenciasComponent
             }
-        ]
+        ],canActivate: [segGuard],
     },
     {
         path:'vermetricas',component:MetricasComponent
@@ -79,7 +80,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaserviciosComponent
             }
-        ]
+        ],canActivate: [segGuard],
     }, 
     {
         path: 'evaluacion', component:EvaluacionComponent, // corregido el typo aquí
@@ -90,7 +91,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaevaluacionComponent
             }
-        ]
+        ],canActivate: [segGuard],
     },
     {
         path:'vertips',component:TipsComponent, children: [
@@ -100,7 +101,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaditatipsComponent
             }
-        ],
+        ],canActivate: [segGuard],
         
     },
 
@@ -115,6 +116,6 @@ export const routes: Routes = [
         {
             path: 'ediciones/:id', component: InsertarUsuarioComponent
         }
-    ],
+    ],canActivate: [segGuard],
 },
 ]

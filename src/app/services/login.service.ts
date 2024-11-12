@@ -11,13 +11,28 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class LoginService {
-  private url = `${base_url}/usuarios`;
-  private urllog = `${base_url}/login`;
-
   constructor(private http: HttpClient) {}
 
+  _username: string = '';
+  idUsuario:number=0
+
+
+  setusername(value: string) {
+    this._username = value;
+  }
+  setid(value:number){
+    this.idUsuario=value
+  }
+  getId(){
+    return this.idUsuario
+  }
+
+  getusername(): string {
+    return this._username;
+  }
+
   login(request: JwtRequest) {
-    return this.http.post(this.urllog, request);
+    return this.http.post('http://localhost:8081/login', request);
   }
   verificar() {
     let token = sessionStorage.getItem('token');
@@ -31,11 +46,6 @@ export class LoginService {
     }
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(token);
-    console.log(decodedToken);
     return decodedToken?.role;
   }
-  /*
-
-  */
-  
 }

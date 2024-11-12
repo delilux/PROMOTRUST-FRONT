@@ -24,13 +24,7 @@ body {
 .btn-primary {
   background-color: #d467f8;
   border-color: #d467f8;
-  color: #fff; 
-  width: 150px; 
-  padding: 8px 0; 
-  font-size: 14px; 
-  text-align: center; 
 }
-
 
 .btn-outline-primary {
   color: #d467f8;
@@ -43,37 +37,6 @@ body {
 
 .text-white {
   color: #ffffff;
-}
-
-.custom-button {
-  background-color: #7b1fa2; 
-  color: #fff;
-  height: 100%;
-  width: 80%;
-  border: none;
-  border-radius: 15px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.custom-button:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.custom-icon {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.custom-subtitle {
-  font-size: 1.25rem;
-  margin: 0; 
-}
-
-.custom-title {
-  font-size: 1.75rem;
-  margin: 0; 
 }
 
 .social-icons i {

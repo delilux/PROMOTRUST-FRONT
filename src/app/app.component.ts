@@ -52,7 +52,7 @@ export class AppComponent {
     return this.role === 'ADMIN';
   }
 
-  isUsuario() {
-    return this.role === 'USUARIO';
+  isInfluencer() {
+    return this.role === 'INFLUENCER';
   }
 }

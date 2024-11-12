@@ -1,4 +1,4 @@
-<mat-toolbar class="custom-toolbar">
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
   <!-- Logo e Identidad -->
   <div class="logo-container">
     <img src="assets/logo.jpg" alt="PROMOTRUST" class="logo">
@@ -39,6 +39,10 @@
     <button mat-button [matMenuTriggerFor]="menuTips" aria-label="Menú de Servicios">Tips</button>
   </div>
   <div>
+    <button mat-button [matMenuTriggerFor]="menuReportes" style="color: white">
+      <mat-icon> insert_drive_file</mat-icon>
+      Reportes
+    </button>
 
   </div>
   
@@ -80,7 +84,14 @@
   <button mat-menu-item routerLink="/servicio" aria-label="Listar Servicios">Listar</button>
   <button mat-menu-item routerLink="/servicio/nuevo" aria-label="Registrar Servicios">Registrar</button>
 </mat-menu>
-
+<mat-menu #menuReportes="matMenu">
+  <button mat-menu-item routerLink="/reportes">
+    <mat-icon> pie_chart</mat-icon>Cantidad
+  </button>
+  <button mat-menu-item routerLink="/reportes/reportesumas">
+    <mat-icon> bar_chart</mat-icon>Monto
+  </button>
+</mat-menu>
 <router-outlet></router-outlet>
 
   

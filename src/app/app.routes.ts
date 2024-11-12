@@ -15,9 +15,22 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { CreaeditaserviciosComponent } from './components/servicios/creaeditaservicios/creaeditaservicios.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
+import { LoginComponent } from './components/login/login.component';
+import { segGuard } from './guard/seguridad.guard';
 
 
 export const routes: Routes = [
+   
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+   
     {
         path: '', redirectTo: '/bienvenido', pathMatch: 'full'
     },
@@ -25,8 +38,9 @@ export const routes: Routes = [
         path:'bienvenido',component:InicioComponent
     },
     {
-        path:'contratousuario',component:ContratousuarioComponent
+        path:'contratousuario',component:ContratousuarioComponent,  canActivate: [segGuard],
     },
+    
     
     {
         path: 'preguntas', component: PreguntasComponent,
@@ -37,7 +51,9 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditapreguntasComponent
             }
-        ]
+        ],
+        canActivate: [segGuard],
+    
     },
     {
         path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
@@ -48,13 +64,15 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaincidenciasComponent
             }
-        ]
+        ],  canActivate: [segGuard],
     },
     {
-        path:'vermetricas',component:MetricasComponent
+        path:'vermetricas',component:MetricasComponent,
+        canActivate: [segGuard],
     },
     {
-        path:'contrato',component:ContratoComponent
+        path:'contrato',component:ContratoComponent,
+        canActivate: [segGuard],
     },
     {
         path: 'servicio', component: ServiciosComponent,
@@ -65,7 +83,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaserviciosComponent
             }
-        ]
+        ],  canActivate: [segGuard],
     }, 
     {
         path: 'evaluacion', component:EvaluacionComponent, // corregido el typo aquí
@@ -76,7 +94,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaeditaevaluacionComponent
             }
-        ]
+        ],  canActivate: [segGuard],
     },
     {
         path:'vertips',component:TipsComponent, children: [
@@ -86,7 +104,7 @@ export const routes: Routes = [
             {
                 path: 'ediciones/:id', component: CreaditatipsComponent
             }
-        ],
+        ],  canActivate: [segGuard],
         
     },
 
@@ -101,6 +119,6 @@ export const routes: Routes = [
         {
             path: 'ediciones/:id', component: InsertarUsuarioComponent
         }
-    ],
+    ],  canActivate: [segGuard],
 },
 ]

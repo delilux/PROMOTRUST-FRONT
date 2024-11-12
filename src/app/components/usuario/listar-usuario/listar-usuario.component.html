@@ -17,9 +17,14 @@
             <mat-card-title>{{ usuario.nombre }} {{ usuario.apellidos }}</mat-card-title>
             <mat-card-subtitle>{{ usuario.correo }}</mat-card-subtitle>
             <mat-card-subtitle>{{ usuario.telefono }}</mat-card-subtitle>
-          
-          
-         
+    
+            <p>Nombre de usuario: {{ usuario.nombre  }}</p>
+            <br />
+            <p>Apellido: {{ usuario.apellidos }}</p>
+            <br />
+            <p>Celular: {{ usuario.telefono  }}</p>
+            <br />
+            <p>Correo: {{ usuario.correo }}</p>
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button class="edit-button" [routerLink]="['ediciones', usuario.id]">
@@ -30,9 +35,6 @@
               <mat-icon>delete</mat-icon>
             </button>
           </mat-card-actions>
-          
-  
-          
         </mat-card>
       </div>
     </div>

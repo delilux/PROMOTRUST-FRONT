@@ -76,7 +76,6 @@ export class InsertarUsuarioComponent implements OnInit {
       this.usuario.apellidos = this.form.value.apellidos;
       this.usuario.telefono = this.form.value.telefono;
       this.usuario.correo = this.form.value.correo;
-      
       this.usuario.tips.id = this.form.value.tips;
       this.usuario.enabled=true;
     if(this.edicion){  

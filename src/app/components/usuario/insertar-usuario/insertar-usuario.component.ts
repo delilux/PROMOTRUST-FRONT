@@ -64,7 +64,7 @@ export class InsertarUsuarioComponent implements OnInit {
       apellidos: ['', Validators.required],
       telefono: ['', Validators.required],
       correo: ['', Validators.required],
-      ruc: ['', Validators.required],
+   
       tips: ['', Validators.required],
     });
   }
@@ -77,7 +77,7 @@ export class InsertarUsuarioComponent implements OnInit {
       this.usuario.apellidos = this.form.value.apellidos;
       this.usuario.telefono = this.form.value.telefono;
       this.usuario.correo = this.form.value.correo;
-      this.usuario.RUC = this.form.value.ruc;
+  
       this.usuario.tips.id = this.form.value.tips;
       this.usuario.enabled=true;
     if(this.edicion){  
@@ -108,7 +108,6 @@ this.us.list().subscribe((d)=>{
           apellidos:new FormControl(data.apellidos),
           telefono:new FormControl(data.telefono),
           correo: new FormControl(data.correo),
-          ruc: new FormControl(data.RUC),
           tips: new FormControl(data.tips.id),
         
           

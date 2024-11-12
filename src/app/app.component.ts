@@ -48,11 +48,11 @@ export class AppComponent {
     this.role = this.loginService.showRole();
     return this.loginService.verificar();
   }
-  isDeveloper() {
+  isAdmin() {
     return this.role === 'ADMIN';
   }
 
-  isTester() {
+  isUsuario() {
     return this.role === 'USUARIO';
   }
 }

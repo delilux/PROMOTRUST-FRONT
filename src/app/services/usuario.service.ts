@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/usuario';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { UsuarioContratoActivoDTO } from '../models/UsuarioContratoActivoDTO';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
@@ -32,4 +33,12 @@ export class UsuarioService {
   listId(id:number) {
     return this.http.get<Usuario>(`${this.url}/${id}`);
   }
+  getCategoria(): Observable<UsuarioContratoActivoDTO[]> {
+    return this.http.get<UsuarioContratoActivoDTO[]>(
+      `${this.url}/categoria`
+    );
+  }
+
+
+  
 }

@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIf } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
 
 
 
@@ -37,4 +38,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'PROMOTRUST';
+  role: string = '';
+  constructor(private loginService: LoginService) {}
+  cerrar() {
+    sessionStorage.clear();
+  }
+
+  verificar() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
+  }
+  isAdmin() {
+    return this.role === 'ADMIN';
+  }
+
+  isInfluencer() {
+    return this.role === 'INFLUENCER';
+  }
 }

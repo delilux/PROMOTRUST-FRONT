@@ -1,4 +1,4 @@
-<mat-toolbar class="custom-toolbar">
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
   <!-- Logo e Identidad -->
   <div class="logo-container">
     <img src="assets/logo.jpg" alt="PROMOTRUST" class="logo">
@@ -14,73 +14,114 @@
 
    
   <!-- Menú Desplegable de Preguntas -->
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuPreguntas" aria-label="Menú de Preguntas">Preguntas</button>
-  </div>
+  <button mat-button [matMenuTriggerFor]="menuPreguntas" style="color: white" *ngIf="isAdmin()">
+    <mat-icon>help</mat-icon>Preguntas
+  </button>
 
-  <!-- Menú Desplegable de Incidencias -->
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuIncidencias" aria-label="Menú de Incidencias">Incidencias</button>
-  </div>
-  <!-- Menú Desplegable de Usuarios -->
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuUsuario" aria-label="Menú de Incidencias">Usuarios</button>
-  </div>
-  <!-- Menú Desplegable de Incidencias -->
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuEvaluaciones" aria-label="Menú de Evaluaciones">Evaluacion</button>
-  </div>
-   <!-- Menú Desplegable de Incidencias -->
-   <div>
-    <button mat-button [matMenuTriggerFor]="menuServicios" aria-label="Menú de Servicios">Servicios</button>
-  </div>
-  <!-- Menú Desplegable de Incidencias -->
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuTips" aria-label="Menú de Servicios">Tips</button>
-  </div>
-  <div>
+  <button mat-button [matMenuTriggerFor]="menuIncidencias" style="color: white" *ngIf="isAdmin()">
+    <mat-icon>report</mat-icon>Incidencias
+  </button>
 
-  </div>
-  
+  <button mat-button [matMenuTriggerFor]="menuUsuario" style="color: white" *ngIf="isAdmin()">
+    <mat-icon>people</mat-icon>Usuarios
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuEvaluaciones" style="color: white" *ngIf="isInfluencer()">
+    <mat-icon>assignment</mat-icon>Evaluacion
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuServicios" style="color: white">
+    <mat-icon>settings</mat-icon>Servicios
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuTips" style="color: white">
+    <mat-icon>lightbulb</mat-icon>Tips
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuReportes" style="color: white">
+    <mat-icon>insert_drive_file</mat-icon>Reportes
+  </button>
 </div>
-  
+
+<div class="right-menu">
+  <button mat-button [matMenuTriggerFor]="menuSalir" style="color: white">
+    <mat-icon>person</mat-icon>Usuario
+  </button>
+</div>
 </mat-toolbar>
 
-<!-- Botón de Perfil -->
-<mat-menu #menuUsuario="matMenu">
-  <button mat-menu-item routerLink="/usuario"><mat-icon>view_list</mat-icon>Listar</button>
-  <button mat-menu-item routerLink="/usuario/nuevo"><mat-icon>add_circle</mat-icon>Registrar</button>
-</mat-menu>
+<!-- Menús Desplegables -->
 
-<!-- Menú MatMenu para Preguntas -->
 <mat-menu #menuPreguntas="matMenu">
-  <button mat-menu-item routerLink="/preguntas" aria-label="Listar Preguntas">Listar</button>
-  <button mat-menu-item routerLink="/preguntas/nuevo" aria-label="Registrar Pregunta">Registrar</button>
+<button mat-menu-item routerLink="/preguntas">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/preguntas/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
 </mat-menu>
 
-<!-- Menú MatMenu para Incidencias -->
 <mat-menu #menuIncidencias="matMenu">
-  <button mat-menu-item routerLink="/incidencias" aria-label="Listar Incidencias">Listar</button>
-  <button mat-menu-item routerLink="/incidencias/nuevo" aria-label="Registrar Incidencia">Registrar</button>
+<button mat-menu-item routerLink="/incidencias">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/incidencias/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
+</mat-menu>
+
+<mat-menu #menuUsuario="matMenu">
+<button mat-menu-item routerLink="/usuario">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/usuario/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
+</mat-menu>
+
+<mat-menu #menuEvaluaciones="matMenu">
+<button mat-menu-item routerLink="/evaluacion">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/evaluacion/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
+</mat-menu>
+
+<mat-menu #menuServicios="matMenu">
+<button mat-menu-item routerLink="/servicio">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/servicio/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
 </mat-menu>
 
 <mat-menu #menuTips="matMenu">
-  <button mat-menu-item routerLink="/vertips" aria-label="Listar Tips">Listar</button>
-  <button mat-menu-item routerLink="/vertips/nuevo" aria-label="Registrar Tips">Registrar</button>
+<button mat-menu-item routerLink="/vertips">
+  <mat-icon>playlist_add_check</mat-icon>Listar
+</button>
+<button mat-menu-item routerLink="/vertips/nuevo">
+  <mat-icon>playlist_add</mat-icon>Registrar
+</button>
 </mat-menu>
 
-<!-- Menú MatMenu para Evaluacion -->
-<mat-menu #menuEvaluaciones="matMenu">
-  <button mat-menu-item routerLink="/evaluacion" aria-label="Listar Evaluaciones">Listar</button>
-  <button mat-menu-item routerLink="/evaluacion/nuevo" aria-label="Registrar Evaluaciones">Registrar</button>
+<mat-menu #menuReportes="matMenu">
+<button mat-menu-item routerLink="/reportes">
+  <mat-icon>pie_chart</mat-icon>Cantidad
+</button>
+<button mat-menu-item routerLink="/reportes/reportesumas">
+  <mat-icon>bar_chart</mat-icon>Monto
+</button>
 </mat-menu>
 
-<!-- Menú MatMenu para Servicios -->
-<mat-menu #menuServicios="matMenu">
-  <button mat-menu-item routerLink="/servicio" aria-label="Listar Servicios">Listar</button>
-  <button mat-menu-item routerLink="/servicio/nuevo" aria-label="Registrar Servicios">Registrar</button>
+<mat-menu #menuSalir="matMenu">
+<button mat-menu-item routerLink="/login" (click)="cerrar()">
+  <mat-icon>logout</mat-icon>Cerrar sesión
+</button>
+<button mat-menu-item>
+  Rol: <span>{{ role }}</span>
+</button>
 </mat-menu>
 
 <router-outlet></router-outlet>
-
-  

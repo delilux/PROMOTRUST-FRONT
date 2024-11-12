@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container" style="text-align: center">
+    <div>
+        <img src="assets/logo.jpg" alt="PROMOTRUST" class="logo">
+
+    </div>
+    <h2>Inicie sesión</h2>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Username" [(ngModel)]="nombre" />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Contrasenia</mat-label>
+      <input
+        type="contrasenia"
+        matInput
+        placeholder="contrasenia"
+        [(ngModel)]="contrasenia"
+      />
+    </mat-form-field>
+    <br />
+    <button mat-raised-button class="custom-button " (click)="login()">Ingresar</button>
+  </div>

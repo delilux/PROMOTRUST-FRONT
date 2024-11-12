@@ -46,7 +46,7 @@ export class CreaditatipsComponent  implements OnInit{
       this.init();
     });
     this.form = this.formBuilder.group({
-      hcodigo:['', Validators.required],
+      hcodigo:[''],
       hcontenido: ['', Validators.required],  // Campo de texto para descripción
       hfecha: ['', Validators.required]  // Selección del id de evaluación
     });

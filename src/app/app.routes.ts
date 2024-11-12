@@ -15,9 +15,23 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { CreaeditaserviciosComponent } from './components/servicios/creaeditaservicios/creaeditaservicios.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 export const routes: Routes = [
+
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+
+      },
+    
+
     {
         path: '', redirectTo: '/bienvenido', pathMatch: 'full'
     },

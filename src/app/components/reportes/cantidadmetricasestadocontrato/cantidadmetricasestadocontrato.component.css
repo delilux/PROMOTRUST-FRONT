@@ -1,0 +1,34 @@
+/* Estilos para el contenedor principal */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Contenedor para el cuadro blanco */
+  .chart-container {
+    background-color: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 900px; 
+    width: 100%; 
+    margin-top: 20px; 
+  }
+  
+  /* Estilos para el título */
+  .title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8a2be2; 
+    margin: 0;
+    padding-bottom: 10px; 
+    text-align: center;
+  }
+  
+  /* Ajuste para el canvas del gráfico */
+  canvas {
+    width: 100% !important;
+    height: 550px !important;
+  }
+  

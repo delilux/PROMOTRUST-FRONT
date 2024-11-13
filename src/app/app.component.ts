@@ -52,6 +52,10 @@ export class AppComponent {
     return this.role === 'ADMIN';
   }
 
+  isEmprendedor() {
+    return this.role === 'EMPRENDEDOR';
+  }
+
   isInfluencer() {
     return this.role === 'INFLUENCER';
   }

@@ -18,6 +18,8 @@ import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditae
 import { LoginComponent } from './components/login/login.component';
 import { segGuard } from './guard/seguridad.guard';
 import { LandingComponent } from './components/landing/landing.component';
+import { ListarcontratoComponent } from './components/contrato/listarcontrato/listarcontrato.component';
+import { EditarcontratoComponent } from './components/contrato/editarcontrato/editarcontrato.component';
 
 export const routes: Routes = [
   {
@@ -46,7 +48,20 @@ export const routes: Routes = [
     path: 'contratousuario',
     component: ContratousuarioComponent,
   },
-
+  {
+    path: 'contrato',
+    component: ContratoComponent,
+    children: [
+      {
+        path: 'contratocreaedita',
+        component: ListarcontratoComponent,
+      },
+      {
+        path: 'contratoeditar/:id',
+        component:EditarcontratoComponent,
+      },
+    ],
+  },
   {
     path: 'preguntas',
     component: PreguntasComponent,
@@ -80,10 +95,6 @@ export const routes: Routes = [
   {
     path: 'vermetricas',
     component: MetricasComponent,
-  },
-  {
-    path: 'contrato',
-    component: ContratoComponent,
   },
   {
     path: 'servicio',

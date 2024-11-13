@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Contrato } from '../models/contrato';
 import { environment } from '../../environments/environment';
+import { CantidadMetricasEstadoContratoDTO } from '../models/CantidadMetricasEstadoContratoDTO ';
 
 const base_url = environment.base
 @Injectable({
@@ -39,6 +40,10 @@ export class ContratoService {
 
   update(r: Contrato) {
     return this.http.put(this.url, r);
+  }
+
+  obtenerCantidadMetricasEstado(): Observable<CantidadMetricasEstadoContratoDTO[]> {
+    return this.http.get<CantidadMetricasEstadoContratoDTO[]>(`${this.url}/cantidadmetricassegunestado`);
   }
 
 }

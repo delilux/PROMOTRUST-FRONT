@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtRequest } from '../../models/jwtRequest';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule,FormsModule,MatInputModule,MatButtonModule],
+  imports: [MatFormFieldModule,FormsModule,MatInputModule,MatButtonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

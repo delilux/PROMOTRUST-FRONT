@@ -58,7 +58,7 @@
     </button>
     <!-- Botón desplegable para Contratousuario -->
     <button mat-button [matMenuTriggerFor]="menuContratoUsuario">
-      <mat-icon>pencil</mat-icon>ContratoUsuario
+      <mat-icon>assignment_ind</mat-icon>ContratoUsuario
     </button>
     <button mat-button [matMenuTriggerFor]="menuReportes">
       <mat-icon>insert_drive_file</mat-icon>Reportes
@@ -72,7 +72,11 @@
     </button>
     <!-- Botón desplegable para Contrato -->
     <button mat-button [matMenuTriggerFor]="menuContrato">
-      <mat-icon>pencil</mat-icon>Contrato
+      <mat-icon>description</mat-icon>Contrato
+    </button>
+    <!-- Botón desplegable para Metricas -->
+    <button mat-button [matMenuTriggerFor]="menuMetrica">
+      <mat-icon>analytics</mat-icon>Metricas
     </button>
   </div>
 
@@ -173,6 +177,16 @@
   </button>
   <button mat-menu-item routerLink="/reportes/reportesumas">
     <mat-icon>bar_chart</mat-icon>Monto
+  </button>
+</mat-menu>
+
+<!-- Menú Desplegable para Reportes -->
+<mat-menu #menuMetrica="matMenu">
+  <button mat-menu-item routerLink="/metricas/creaeditarm">
+    <mat-icon>playlist_add_check</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/metricas/registrar">
+    <mat-icon>playlist_add</mat-icon>Registrar
   </button>
 </mat-menu>
 

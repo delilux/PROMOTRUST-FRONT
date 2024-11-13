@@ -1,0 +1,85 @@
+<div class="container">
+  <div style="text-align: center; margin: 10px">
+    <h1>Metricas</h1>
+  </div>
+
+  <h1>
+    <div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Columna ID -->
+        <ng-container matColumnDef="c1">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let Metricas">{{ Metricas.id }}</td>
+        </ng-container>
+
+        <!-- Columna Descripción de la Pregunta -->
+        <ng-container matColumnDef="c2">
+          <th mat-header-cell *matHeaderCellDef>Alcance personas</th>
+          <td mat-cell *matCellDef="let Metricas">
+            {{ Metricas.alcancepersonas }}
+          </td>
+        </ng-container>
+
+        <!-- Columna Evaluación -->
+        <ng-container matColumnDef="c3">
+          <th mat-header-cell *matHeaderCellDef>Ingresos generados</th>
+          <td mat-cell *matCellDef="let Metricas">
+            {{ Metricas.ingresosgenerados }}
+          </td>
+        </ng-container>
+
+        <!-- Columna Evaluación -->
+        <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef>Likes</th>
+          <td mat-cell *matCellDef="let Metricas">{{ Metricas.likes }}</td>
+        </ng-container>
+
+        <!-- Columna Evaluación -->
+        <ng-container matColumnDef="c5">
+          <th mat-header-cell *matHeaderCellDef>Comentarios</th>
+          <td mat-cell *matCellDef="let Metricas">
+            {{ Metricas.comentarios }}
+          </td>
+        </ng-container>
+
+        <!-- Columna Evaluación -->
+        <ng-container matColumnDef="c6">
+          <th mat-header-cell *matHeaderCellDef>Compartidos</th>
+          <td mat-cell *matCellDef="let Metricas">
+            {{ Metricas.compartidos }}
+          </td>
+        </ng-container>
+
+        <!-- Columna Evaluación -->
+        <ng-container matColumnDef="c7">
+          <th mat-header-cell *matHeaderCellDef>ID Contrato</th>
+          <td mat-cell *matCellDef="let Metricas">
+            {{ Metricas.contrato.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="eliminarmetrica">
+          <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+          <td mat-cell *matCellDef="let element" (click)="eliminar(element.id)">
+            <mat-icon style="color: #3b1d9e">delete</mat-icon>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actualizarmetrica">
+          <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+          <td mat-cell *matCellDef="let ContratoUsuario">
+            <button
+              mat-raised-button
+              [routerLink]="['/metricas/actualizar', ContratoUsuario.id]"
+            >
+              <mat-icon style="color: #3b1d9e">edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </h1>
+</div>

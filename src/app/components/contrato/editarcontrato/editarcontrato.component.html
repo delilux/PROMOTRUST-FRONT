@@ -1,0 +1,32 @@
+<div class="container" style="text-align: center; margin: 5%">
+  <div style="margin: 5%"><h1>Actualizar contrato</h1></div>
+
+  <div>
+    <!-- Editar Contrato -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!------------------------>
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="hid" readonly />
+      </mat-form-field>
+      <br />
+
+      <!-- Detalle contrato -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Detalle Contrato</mat-label>
+        <input matInput formControlName="hdetalle_contrato" />
+      </mat-form-field>
+      <br />
+      <!-- Estado contrato -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="hestado" />
+      </mat-form-field>
+      <br />
+
+      <div>
+        <button mat-button class="custom-button">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

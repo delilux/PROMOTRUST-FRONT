@@ -1,65 +1,113 @@
-
-
-.logo {
-    height: 100px;
-    margin-right: 12px;
-  }
-  
-  /* Estilos generales */
+/* Fondo del contenedor principal */
 .container {
-    max-width: 400px;
-    margin: auto;
-    padding: 40px;
-    background-color: #f5f5f5; /* Fondo claro */
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  }
-  
-  
-  h2 {
-    color: #3f51b5; /* Color principal (puedes cambiarlo) */
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Campos de entrada */
-  mat-form-field {
-    width: 100%;
-  }
-  
-  .mat-form-field-label {
-    color: #3f51b5 !important; /* Color del label */
-  }
-  
-  input[matInput] {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
-  }
-  
-  /* Botón personalizado */
-  .custom-button {
-    background-color: #d467f8; /* Color del botón */
-    color: #ffffff;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease; /* Animación para hover */
-  }
-  
-  .custom-button:hover {
-    background-color: #303f9f; /* Color del botón al pasar el ratón */
-  }
-  
-  /* Espaciado adicional */
-  .mat-form-field,
-  button {
-    margin-top: 15px;
-  }
-  
-  br {
-    display: none; /* Oculta los <br> para dejar los márgenes de los estilos */
-  }
-  
+  max-width: 400px;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #f8f9fc; 
+  border-radius: 12px; 
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título */
+h2 {
+  color: #6d28d9; 
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* Campos de entrada */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px; 
+}
+
+.mat-form-field-wrapper {
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 10px;
+}
+
+.mat-form-field-label {
+  color: #6d28d9 !important; 
+  font-weight: 600;
+}
+
+input[matInput] {
+  font-size: 16px;
+}
+
+.custom-button {
+  background-color: #d467f8; 
+  color: #ffffff important; 
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+.custom-button:hover {
+  background-color: #c156e7; 
+}
+/* Barra de navegación */
+.toolbar {
+  background-color: #7110b7;
+  padding: 2px 0; /* Hacer la barra más delgada */
+  color: white;
+}
+
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px; /* Reducir el padding lateral */
+}
+
+.logo img {
+  width: 30px; /* Ajustar tamaño del logo */
+  height: 30px;
+  margin-right: 8px;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1em; /* Reducir ligeramente el tamaño del título */
+  color: white;
+  margin-left: 5px; /* Espacio entre logo y título */
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px; /* Reducir espacio entre enlaces */
+  font-weight: bold;
+  font-size: 0.9em; /* Reducir tamaño de fuente de los enlaces */
+}
+
+.btn-login {
+  background-color: #f0f0f0;
+  color: #7110b7;
+  padding: 3px 10px; /* Reducir padding en el botón */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85em; /* Reducir tamaño de fuente del botón */
+  display: flex;
+  align-items: center; /* Centrar icono y texto */
+}
+
+.btn-login:hover {
+  background-color: #e0e0e0;
+}
+
+
+

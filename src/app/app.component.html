@@ -51,6 +51,9 @@
       <mat-icon>settings</mat-icon>Servicios
     </button>
     <!-- Botón desplegable para Contrato -->
+    <button mat-button [matMenuTriggerFor]="menuContrato">
+      <mat-icon>pencil</mat-icon>Contrato
+    </button>
   </div>
 
   <!-- Botón de Usuario en el menú derecho, visible para ambos roles -->
@@ -105,7 +108,7 @@
 
 <!-- Menú Desplegable para Contratos -->
 <mat-menu #menuContrato="matMenu">
-  <button mat-menu-item routerLink="/contratousuario">
+  <button mat-menu-item routerLink="/contrato/contratocreaedita">
     <mat-icon>playlist_add_check</mat-icon>Listar
   </button>
   <button mat-menu-item routerLink="/contrato">

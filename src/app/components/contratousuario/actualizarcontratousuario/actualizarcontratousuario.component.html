@@ -1,0 +1,63 @@
+<div class="container" style="text-align: center; margin: 5%">
+  <div style="margin: 5%">
+    <h1>Actualizar contrato usuario</h1>
+  </div>
+
+  <div>
+    <!-- Formulario para registrar incidencias -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!-- Campo para el código (visible solo en modo edición) -->
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="Hid" />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para la fecha de inicio del contrato -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha inicio</mat-label>
+        <input matInput type="date" formControlName="Hfechainicio" />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para la fecha de fin del contrato -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha fin</mat-label>
+        <input matInput type="date" formControlName="Hfechafin" />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para seleccionar el contrato ID -->
+      <mat-form-field>
+        <mat-label>Contrato ID</mat-label>
+        <mat-select formControlName="HidContrato">
+          <mat-option
+            *ngFor="let contrato of listaContrato"
+            [value]="contrato.id"
+          >
+            {{ contrato.id }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para seleccionar el usuario ID -->
+      <mat-form-field>
+        <mat-label>Usuario ID</mat-label>
+        <mat-select formControlName="HidUsuario">
+          <mat-option *ngFor="let usuario of listaUsuario" [value]="usuario.id">
+            {{ usuario.id }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Botón para registrar -->
+      <div>
+        <button mat-button class="custom-button" type="submit">
+          Registrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

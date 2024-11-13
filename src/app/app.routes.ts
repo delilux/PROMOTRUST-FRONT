@@ -24,6 +24,9 @@ import { CreaeditacontratousuarioComponent } from './components/contratousuario/
 import { ActualizarcontratousuarioComponent } from './components/contratousuario/actualizarcontratousuario/actualizarcontratousuario.component';
 import { RegistrarcontratoComponent } from './components/contrato/registrarcontrato/registrarcontrato.component';
 import { RegistarcontratousuarioComponent } from './components/contratousuario/registarcontratousuario/registarcontratousuario.component';
+import { CreaeditametricaComponent } from './components/metricas/creaeditametrica/creaeditametrica.component';
+import { ActualizarmetricaComponent } from './components/metricas/actualizarmetrica/actualizarmetrica.component';
+import { RegistrarmetricaComponent } from './components/metricas/registrarmetrica/registrarmetrica.component';
 
 export const routes: Routes = [
   {
@@ -111,8 +114,22 @@ export const routes: Routes = [
     canActivate: [segGuard],
   },
   {
-    path: 'vermetricas',
+    path: 'metricas',
     component: MetricasComponent,
+    children:[
+      {
+        path: 'creaeditarm',
+        component: CreaeditametricaComponent,
+      },
+      {
+        path:'actualizar/:id',
+        component:ActualizarmetricaComponent
+      },
+      {
+        path:'registrar',
+        component:RegistrarmetricaComponent,
+      }
+    ]
   },
   {
     path: 'servicio',

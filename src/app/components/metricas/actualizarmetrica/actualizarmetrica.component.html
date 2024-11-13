@@ -1,0 +1,83 @@
+<div class="container" style="text-align: center; margin: 5%">
+  <div style="margin: 5%">
+    <h1>{{ edicion ? "Actualizar Métricas" : "Crear Métricas" }}</h1>
+  </div>
+
+  <div>
+    <!-- Formulario para registrar/actualizar métricas -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!-- Campo para el código (visible solo en modo edición) -->
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="Hid" />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para seleccionar el contrato ID -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Contrato ID</mat-label>
+        <mat-select formControlName="HidContrato" required>
+          <mat-option
+            *ngFor="let contrato of listaContrato"
+            [value]="contrato.id"
+          >
+            {{ contrato.id }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para alcance de personas -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Alcance de Personas</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="Halcancepersona"
+          required
+        />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para ingresos generados -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Ingresos Generados</mat-label>
+        <input
+          matInput
+          type="number"
+          formControlName="Hingresosgenerados"
+          required
+        />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para likes -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Likes</mat-label>
+        <input matInput type="number" formControlName="Hlikes" required />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para comentarios -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Comentarios</mat-label>
+        <input matInput type="number" formControlName="Hcomentarios" required />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para compartidos -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Compartidos</mat-label>
+        <input matInput type="number" formControlName="Hcompartidos" required />
+      </mat-form-field>
+      <br />
+
+      <!-- Botón para registrar/actualizar -->
+      <div style="margin-top: 20px">
+        <button mat-raised-button color="primary" type="submit">
+          {{ edicion ? "Actualizar" : "Registrar" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

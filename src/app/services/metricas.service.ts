@@ -18,7 +18,26 @@ export class MetricasService {
     return this.http.get<Metricas[]>(this.url);
   }
 
+  insert(con:Metricas): Observable<any> {
+    return this.http.post(this.url,con)
+  }
+  setList(listaNueva:Metricas[]){
+    this.listaCambio.next(listaNueva)
+  }
+
   getList(){
     return this.listaCambio.asObservable()
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  getlistid(id: number) {
+    return this.http.get<Metricas>(`${this.url}/${id}`);
+  }
+
+  update(r: Metricas) {
+    return this.http.put(this.url, r);
   }
 }

@@ -1,23 +1,40 @@
+<!-- Barra de Navegación -->
+<div class="toolbar">
+  <div class="toolbar-container">
+      <div class="logo">
+          <img src="assets/logo.png" style="height: 40px; width: 40px; margin-right: 10px;" alt="PromoTrust Logo">
+          <span class="app-title">PROMOTRUST</span>
+      </div>
+      <nav class="navigation">
+          <a routerLink="/promohome">Inicio</a>
+          <a href="#community">Comunidad</a>
+          <a href="#about">Conoce al equipo</a>
+          <a href="#contact">Contáctanos</a>
+      </nav>
+      <a class="btn-login" routerLink="/login">Iniciar →</a>
+  </div>
+</div>
+
+<!-- Contenedor de inicio de sesión -->
 <div class="container" style="text-align: center">
     <div>
-        <img src="assets/logo.jpg" alt="PROMOTRUST" class="logo">
-
+        <img src="assets/logo.png" width="100" height="100" alt="PROMOTRUST" class="logo">
     </div>
     <h2>Inicie sesión</h2>
-    <mat-form-field class="example-full-width">
-      <mat-label>Nombre</mat-label>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Usuario</mat-label>
       <input matInput placeholder="Username" [(ngModel)]="nombre" />
     </mat-form-field>
     <br />
-    <mat-form-field class="example-full-width">
-      <mat-label>Contrasenia</mat-label>
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Contraseña</mat-label>
       <input
-        type="contrasenia"
+        type="password"
         matInput
-        placeholder="contrasenia"
+        placeholder="Contraseña"
         [(ngModel)]="contrasenia"
       />
     </mat-form-field>
     <br />
-    <button mat-raised-button class="custom-button " (click)="login()">Ingresar</button>
-  </div>
+    <button mat-button class="custom-button" (click)="login()">Ingresar</button>
+</div>

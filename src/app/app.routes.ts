@@ -27,6 +27,8 @@ import { RegistarcontratousuarioComponent } from './components/contratousuario/r
 import { CreaeditametricaComponent } from './components/metricas/creaeditametrica/creaeditametrica.component';
 import { ActualizarmetricaComponent } from './components/metricas/actualizarmetrica/actualizarmetrica.component';
 import { RegistrarmetricaComponent } from './components/metricas/registrarmetrica/registrarmetrica.component';
+import { CantidadmetricasestadocontratoComponent } from './components/reportes/cantidadmetricasestadocontrato/cantidadmetricasestadocontrato.component';
+import { ContratoingresostotalesComponent } from './components/reportes/contratoingresostotales/contratoingresostotales.component';
 
 export const routes: Routes = [
   {
@@ -130,6 +132,14 @@ export const routes: Routes = [
         component:RegistrarmetricaComponent,
       }
     ]
+  },
+  {
+    path:'cantidadmetricasestadocontrato',
+    component:CantidadmetricasestadocontratoComponent
+  },
+  {
+    path:'ingresostotalesporcontrato',
+    component:ContratoingresostotalesComponent
   },
   {
     path: 'servicio',

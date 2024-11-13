@@ -1,0 +1,51 @@
+<div class="container" >
+    <div style="text-align: center;margin: 10px;">
+  <h1> Contratos registrados </h1>
+    </div>
+  
+  <h1>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Columna ID -->
+      <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let Contrato"> {{Contrato.id}} </td>
+      </ng-container>
+  
+      <!-- Columna Descripción de la Pregunta -->
+      <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef> Detalle Contrato</th>
+        <td mat-cell *matCellDef="let Contrato"> {{Contrato.detalle_contrato}} </td>
+      </ng-container>
+  
+      <!-- Columna Evaluación -->
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef> Estado</th>
+        <td mat-cell *matCellDef="let Contrato"> {{Contrato.estado}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="eliminarcontrato">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element" (click)="eliminar(element.id)">
+          <mat-icon style="color:#3b1d9e">delete</mat-icon>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actualizarcontrato">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let Contrato">
+          <button mat-raised-button [routerLink]="['/contrato/contratoeditar', Contrato.id]">
+            <mat-icon style="color:#3b1d9e">edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  </h1>
+  
+  </div>

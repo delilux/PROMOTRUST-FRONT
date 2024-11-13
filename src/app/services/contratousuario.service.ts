@@ -30,4 +30,16 @@ export class ContratousuarioService {
   setList(listaNueva:ContratoUsuario[]){
     this.listaCambio.next(listaNueva)
   }
+
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  getlistid(id: number) {
+    return this.http.get<ContratoUsuario>(`${this.url}/${id}`);
+  }
+
+  update(r: ContratoUsuario) {
+    return this.http.put(this.url, r);
+  }
 }

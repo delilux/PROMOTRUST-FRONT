@@ -17,105 +17,134 @@ import { EvaluacionComponent } from './components/evaluacion/evaluacion.componen
 import { CreaeditaevaluacionComponent } from './components/evaluacion/creaeditaevaluacion/creaeditaevaluacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { segGuard } from './guard/seguridad.guard';
-
+import { LandingComponent } from './components/landing/landing.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'promohome',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'promohome',
+    component: LandingComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/bienvenido',
+    pathMatch: 'full',
+  },
+  {
+    path: 'bienvenido',
+    component: InicioComponent,
+  },
+  {
+    path: 'contratousuario',
+    component: ContratousuarioComponent,
+  },
 
-    {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full',
+  {
+    path: 'preguntas',
+    component: PreguntasComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: CreaeditapreguntasComponent,
       },
       {
-        path: 'login',
-        component: LoginComponent,
-
+        path: 'ediciones/:id',
+        component: CreaeditapreguntasComponent,
       },
-    
-
-    {
-        path: '', redirectTo: '/bienvenido', pathMatch: 'full'
-    },
-    {
-        path:'bienvenido',component:InicioComponent
-    },
-    {
-        path:'contratousuario',component:ContratousuarioComponent
-    },
-    
-    {
-        path: 'preguntas', component: PreguntasComponent,
-        children: [
-            {
-                path: 'nuevo', component: CreaeditapreguntasComponent
-            },
-            {
-                path: 'ediciones/:id', component: CreaeditapreguntasComponent
-            }
-        ],canActivate: [segGuard],
-    },
-    {
-        path: 'incidencias', component: IncidenciasComponent, // corregido el typo aquí
-        children: [
-            {
-                path: 'nuevo', component: CreaeditaincidenciasComponent
-            },
-            {
-                path: 'ediciones/:id', component: CreaeditaincidenciasComponent
-            }
-        ],canActivate: [segGuard],
-    },
-    {
-        path:'vermetricas',component:MetricasComponent
-    },
-    {
-        path:'contrato',component:ContratoComponent
-    },
-    {
-        path: 'servicio', component: ServiciosComponent,
-        children: [
-            {
-                path: 'nuevo', component: CreaeditaserviciosComponent
-            },
-            {
-                path: 'ediciones/:id', component: CreaeditaserviciosComponent
-            }
-        ],canActivate: [segGuard],
-    }, 
-    {
-        path: 'evaluacion', component:EvaluacionComponent, // corregido el typo aquí
-        children: [
-            {
-                path: 'nuevo', component: CreaeditaevaluacionComponent
-            },
-            {
-                path: 'ediciones/:id', component: CreaeditaevaluacionComponent
-            }
-        ],canActivate: [segGuard],
-    },
-    {
-        path:'vertips',component:TipsComponent, children: [
-            {
-                path: 'nuevo', component: CreaditatipsComponent
-            },
-            {
-                path: 'ediciones/:id', component: CreaditatipsComponent
-            }
-        ],canActivate: [segGuard],
-        
-    },
-
-
-//usuario
-{
-    path: 'usuario', component: UsuarioComponent,
+    ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'incidencias',
+    component: IncidenciasComponent, // corregido el typo aquí
     children: [
-        {
-            path: 'nuevo', component: InsertarUsuarioComponent
-        },
-        {
-            path: 'ediciones/:id', component: InsertarUsuarioComponent
-        }
-    ],canActivate: [segGuard],
-},
-]
+      {
+        path: 'nuevo',
+        component: CreaeditaincidenciasComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaeditaincidenciasComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'vermetricas',
+    component: MetricasComponent,
+  },
+  {
+    path: 'contrato',
+    component: ContratoComponent,
+  },
+  {
+    path: 'servicio',
+    component: ServiciosComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: CreaeditaserviciosComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaeditaserviciosComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'evaluacion',
+    component: EvaluacionComponent, // corregido el typo aquí
+    children: [
+      {
+        path: 'nuevo',
+        component: CreaeditaevaluacionComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaeditaevaluacionComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+  {
+    path: 'vertips',
+    component: TipsComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: CreaditatipsComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: CreaditatipsComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+
+  //usuario
+  {
+    path: 'usuario',
+    component: UsuarioComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: InsertarUsuarioComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertarUsuarioComponent,
+      },
+    ],
+    canActivate: [segGuard],
+  },
+];

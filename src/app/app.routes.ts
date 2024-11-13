@@ -20,6 +20,10 @@ import { segGuard } from './guard/seguridad.guard';
 import { LandingComponent } from './components/landing/landing.component';
 import { ListarcontratoComponent } from './components/contrato/listarcontrato/listarcontrato.component';
 import { EditarcontratoComponent } from './components/contrato/editarcontrato/editarcontrato.component';
+import { CreaeditacontratousuarioComponent } from './components/contratousuario/creaeditacontratousuario/creaeditacontratousuario.component';
+import { ActualizarcontratousuarioComponent } from './components/contratousuario/actualizarcontratousuario/actualizarcontratousuario.component';
+import { RegistrarcontratoComponent } from './components/contrato/registrarcontrato/registrarcontrato.component';
+import { RegistarcontratousuarioComponent } from './components/contratousuario/registarcontratousuario/registarcontratousuario.component';
 
 export const routes: Routes = [
   {
@@ -47,6 +51,20 @@ export const routes: Routes = [
   {
     path: 'contratousuario',
     component: ContratousuarioComponent,
+    children: [
+      {
+        path: 'creareditar',
+        component: CreaeditacontratousuarioComponent,
+      },
+      {
+        path: 'actualizar/:id',
+        component: ActualizarcontratousuarioComponent,
+      },
+      {
+        path: 'insertar',
+        component: RegistarcontratousuarioComponent,
+      }
+    ],
   },
   {
     path: 'contrato',

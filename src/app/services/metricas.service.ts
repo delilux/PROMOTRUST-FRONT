@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Metricas } from '../models/metricas';
 import { environment } from '../../environments/environment';
+import { MetricaIngresoTotalDTO } from '../models/MetricaIngresoTotalDTO';
 
 const base_url = environment.base
 @Injectable({
@@ -39,5 +40,9 @@ export class MetricasService {
 
   update(r: Metricas) {
     return this.http.put(this.url, r);
+  }
+
+  obtenerIngresosTotal(): Observable<MetricaIngresoTotalDTO[]> {
+    return this.http.get<MetricaIngresoTotalDTO[]>(`${this.url}/metricaingresototal`);
   }
 }

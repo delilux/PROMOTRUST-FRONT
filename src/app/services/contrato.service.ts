@@ -29,9 +29,16 @@ export class ContratoService {
     return this.listaCambio.asObservable()
   }
 
-  //recibe parametro
-  listid(id: number) {
-    return this.http.get<Contrato>(`${this.url}/${id}`)
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+  getlistid(id: number) {
+    return this.http.get<Contrato>(`${this.url}/${id}`);
+  }
+
+  update(r: Contrato) {
+    return this.http.put(this.url, r);
   }
 
 }

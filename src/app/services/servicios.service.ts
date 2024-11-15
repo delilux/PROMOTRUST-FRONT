@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Servicios } from '../models/servicios';
+import { ServiciorCategoriaDTO } from '../models/ServiciorCategoriaDTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -15,7 +16,7 @@ export class ServiciosService {
   private listaCambio=new Subject<Servicios[]>();
   
   constructor(private http: HttpClient) {}
-  list() {
+  list():Observable<Servicios[]>{
     return this.http.get<Servicios[]>(this.url);
   }
 
@@ -41,5 +42,9 @@ export class ServiciosService {
 
   update(r: Servicios) {
     return this.http.put(this.url, r);
+  }
+
+  ServiciosxCategoria(): Observable<ServiciorCategoriaDTO[]> {
+    return this.http.get<ServiciorCategoriaDTO[]>(`${this.url}/ServicioxCatgoria`);
   }
 }

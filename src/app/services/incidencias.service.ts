@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Incidencias } from '../models/incidencias';
  import { Subject } from 'rxjs';
  import { Observable } from 'rxjs';
+import { IncidenciasControllerDTO } from '../models/IncidenciasControllerDTO';
 
 const base_url = environment.base
 @Injectable({
@@ -39,4 +40,10 @@ export class IncidenciasService {
   update(r: Incidencias) {
     return this.http.put(this.url, r);
   }
+
+    // Cambiar a IncidenciasControllerDTO[] si el backend ya devuelve los datos en ese formato
+    IncidenciasporContrato(): Observable<IncidenciasControllerDTO[]> {
+      return this.http.get<IncidenciasControllerDTO[]>(`${this.url}/incidencias_contrato`);
+    }
+
 }

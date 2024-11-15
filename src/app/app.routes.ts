@@ -31,6 +31,8 @@ import { CantidadmetricasestadocontratoComponent } from './components/reportes/c
 import { ContratoingresostotalesComponent } from './components/reportes/contratoingresostotales/contratoingresostotales.component';
 import { IncidenciascontratoComponent } from './components/reportes/incidenciascontrato/incidenciascontrato.component';
 import { ServicioxcategoriaComponent } from './components/reportes/servicioxcategoria/servicioxcategoria.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { InsertarrolesComponent } from './components/roles/insertarroles/insertarroles.component';
 
 export const routes: Routes = [
   {
@@ -212,4 +214,20 @@ export const routes: Routes = [
     ],
     canActivate: [segGuard],
   },
+  //registrar
+  {
+    path: 'registrar', component: InsertarUsuarioComponent
+  }, 
+
+  {
+    path: 'listarrole', component: RolesComponent,
+    children: [
+        { path: 'insertarrole', component: InsertarrolesComponent },
+        { path: 'ediciones/:id', component: InsertarrolesComponent },
+    ],
+    canActivate: [segGuard],
+  }
+
+  
+
 ];

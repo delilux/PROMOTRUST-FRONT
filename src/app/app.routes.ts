@@ -34,6 +34,7 @@ import { ServicioxcategoriaComponent } from './components/reportes/servicioxcate
 import { RolesComponent } from './components/roles/roles.component';
 import { InsertarrolesComponent } from './components/roles/insertarroles/insertarroles.component';
 import { ActivoComponent } from './components/reportes/activo/activo.component';
+import { CategoriausuarioComponent } from './components/reportes/categoriausuario/categoriausuario.component';
 
 export const routes: Routes = [
   {
@@ -155,6 +156,10 @@ export const routes: Routes = [
   {
     path:'activocontraro',
     component:ActivoComponent
+  },
+  {
+    path:'categoriausuario',
+    component:CategoriausuarioComponent
   },
 
 

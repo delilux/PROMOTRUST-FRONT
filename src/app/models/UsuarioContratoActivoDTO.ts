@@ -1,5 +1,9 @@
 export class UsuarioContratoActivoDTO{
-    
-     Nombre_Usuario:string=""
-     Categoria_Servicio:string=""
+    id:number=0
+    nombre:string=""
+    apellidos:string=""
+    correo:string=""
+    telefono:string=""
+    detalle_contrato:string=""
+    estadocontrato:string=""
 }

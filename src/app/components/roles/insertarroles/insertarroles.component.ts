@@ -67,7 +67,7 @@ export class InsertarrolesComponent {
   registrar(): void {
     if (this.form.valid) {
       this.role.id= this.form.value.codigo;
-      this.role.UsuarioDTO.id = this.form.value.usuario;
+      this.role.usuario.id = this.form.value.usuario;
       this.role.tipoRol = this.form.value.tipoRol;
       this.rS.insert(this.role).subscribe((data) => {
         this.rS.list().subscribe((data) => {
@@ -83,7 +83,7 @@ export class InsertarrolesComponent {
       this.rS.listId(this.id).subscribe((data)=>{
         this.form.setValue({
           codigo: data.id,
-          usuario: data.UsuarioDTO.id,
+          usuario: data.usuario.id,
           tipoRol: data.tipoRol,
         });
       });

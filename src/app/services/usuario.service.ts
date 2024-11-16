@@ -33,12 +33,12 @@ export class UsuarioService {
   listId(id:number) {
     return this.http.get<Usuario>(`${this.url}/${id}`);
   }
-  getCategoria(): Observable<UsuarioContratoActivoDTO[]> {
+
+  getActivo(): Observable<UsuarioContratoActivoDTO[]> {
     return this.http.get<UsuarioContratoActivoDTO[]>(
-      `${this.url}/categoria`
+      `${this.url}/usuario_contrato_activo`
     );
   }
-
 
   
 }

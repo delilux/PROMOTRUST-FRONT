@@ -216,7 +216,7 @@ export const routes: Routes = [
   },
   //registrar
   {
-    path: 'registrar', component: InsertarUsuarioComponent
+    path: 'registrar', component: InsertarUsuarioComponent,
   }, 
 
   {

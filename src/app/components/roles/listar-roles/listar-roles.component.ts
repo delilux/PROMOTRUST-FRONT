@@ -25,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ListarRolesComponent implements OnInit {
   dataSource: MatTableDataSource<Roles> = new MatTableDataSource();
-  displayedColumns: string[] = [ 'codigo','username','tipo', 'accion01', 'accion02'];
+  displayedColumns: string[] = [ 'codigo','username','tipo'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(

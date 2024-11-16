@@ -33,6 +33,7 @@ import { IncidenciascontratoComponent } from './components/reportes/incidenciasc
 import { ServicioxcategoriaComponent } from './components/reportes/servicioxcategoria/servicioxcategoria.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { InsertarrolesComponent } from './components/roles/insertarroles/insertarroles.component';
+import { ActivoComponent } from './components/reportes/activo/activo.component';
 
 export const routes: Routes = [
   {
@@ -151,6 +152,11 @@ export const routes: Routes = [
     path:'servciocategoria',
     component:ServicioxcategoriaComponent
   },
+  {
+    path:'activocontraro',
+    component:ActivoComponent
+  },
+
 
   {
     path: 'servicio',

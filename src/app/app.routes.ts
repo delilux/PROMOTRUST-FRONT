@@ -29,6 +29,12 @@ import { ActualizarmetricaComponent } from './components/metricas/actualizarmetr
 import { RegistrarmetricaComponent } from './components/metricas/registrarmetrica/registrarmetrica.component';
 import { CantidadmetricasestadocontratoComponent } from './components/reportes/cantidadmetricasestadocontrato/cantidadmetricasestadocontrato.component';
 import { ContratoingresostotalesComponent } from './components/reportes/contratoingresostotales/contratoingresostotales.component';
+import { IncidenciascontratoComponent } from './components/reportes/incidenciascontrato/incidenciascontrato.component';
+import { ServicioxcategoriaComponent } from './components/reportes/servicioxcategoria/servicioxcategoria.component';
+import { RolesComponent } from './components/roles/roles.component';
+import { InsertarrolesComponent } from './components/roles/insertarroles/insertarroles.component';
+import { ActivoComponent } from './components/reportes/activo/activo.component';
+import { CategoriausuarioComponent } from './components/reportes/categoriausuario/categoriausuario.component';
 
 export const routes: Routes = [
   {
@@ -140,7 +146,23 @@ export const routes: Routes = [
   {
     path:'ingresostotalesporcontrato',
     component:ContratoingresostotalesComponent
+  }, {
+    path:'incidencias_contrato',
+    component:IncidenciascontratoComponent
+  },{
+    path:'servciocategoria',
+    component:ServicioxcategoriaComponent
   },
+  {
+    path:'activocontraro',
+    component:ActivoComponent
+  },
+  {
+    path:'categoriausuario',
+    component:CategoriausuarioComponent
+  },
+
+
   {
     path: 'servicio',
     component: ServiciosComponent,
@@ -203,4 +225,20 @@ export const routes: Routes = [
     ],
     canActivate: [segGuard],
   },
+  //registrar
+  {
+    path: 'registrar', component: InsertarUsuarioComponent,
+  }, 
+
+  {
+    path: 'listarrole', component: RolesComponent,
+    children: [
+        { path: 'insertarrole', component: InsertarrolesComponent },
+        { path: 'ediciones/:id', component: InsertarrolesComponent },
+    ],
+    canActivate: [segGuard],
+  }
+
+  
+
 ];

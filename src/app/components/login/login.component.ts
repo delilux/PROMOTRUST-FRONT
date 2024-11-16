@@ -40,4 +40,7 @@ export class LoginComponent  implements OnInit{
       }
     );
   }
+  Registrarse(){
+    this.router.navigate(['registrar']);
+  }
 }

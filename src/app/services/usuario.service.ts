@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/usuario';
 import { Observable, Subject } from 'rxjs';
 import { UsuarioContratoActivoDTO } from '../models/UsuarioContratoActivoDTO';
+import { CateogriaServiciosUsuriosDTO } from '../models/CateogriaServiciosUsuriosDTO';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
@@ -33,9 +34,17 @@ export class UsuarioService {
   listId(id:number) {
     return this.http.get<Usuario>(`${this.url}/${id}`);
   }
-  getCategoria(): Observable<UsuarioContratoActivoDTO[]> {
+
+  getActivo(): Observable<UsuarioContratoActivoDTO[]> {
     return this.http.get<UsuarioContratoActivoDTO[]>(
-      `${this.url}/categoria`
+      `${this.url}/usuario_contrato_activo`
+    );
+  }
+  getCategoria(categoria:string): Observable<CateogriaServiciosUsuriosDTO[]> {
+
+console.log("Tratando de hacer consulta...", categoria);
+    return this.http.get<CateogriaServiciosUsuriosDTO[]>(
+      `${this.url}/Usuario_Categoria/${categoria}`
     );
   }
 

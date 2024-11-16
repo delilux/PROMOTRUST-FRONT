@@ -78,6 +78,10 @@
     <button mat-button [matMenuTriggerFor]="menuMetrica">
       <mat-icon>analytics</mat-icon>Metricas
     </button>
+    <button mat-button [matMenuTriggerFor]="menuRole">
+      <mat-icon>star</mat-icon>Roles
+    </button>
+
   </div>
 
   <!-- Botón de Usuario en el menú derecho, visible para ambos roles -->
@@ -178,6 +182,19 @@
   <button mat-menu-item routerLink="/ingresostotalesporcontrato">
     <mat-icon>bar_chart</mat-icon>IngresosTotalesporContrato
   </button>
+  <button mat-menu-item routerLink="/incidencias_contrato">
+    <mat-icon>bar_chart</mat-icon>IncidenciasporContrato
+  </button>
+  <button mat-menu-item routerLink="/servciocategoria">
+    <mat-icon>bar_chart</mat-icon>Distribucion de dinero por Categoria
+  </button>
+  <button mat-menu-item routerLink="/activocontraro">
+    <mat-icon>bar_chart</mat-icon>Usuario Contrato activo
+  </button>
+  <button mat-menu-item routerLink="/categoriausuario">
+    <mat-icon>bar_chart</mat-icon>Categoria Usuario 
+  </button>
+ 
 </mat-menu>
 
 <!-- Menú Desplegable para Reportes -->
@@ -198,6 +215,10 @@
   <button mat-menu-item>
     Rol: <span>{{ role }}</span>
   </button>
+</mat-menu>
+<mat-menu #menuRole="matMenu">
+  <button mat-menu-item routerLink="/listarrole"><mat-icon>view_list</mat-icon>Listar</button>
+  <button mat-menu-item routerLink="/listarrole/insertarrole"><mat-icon>add_circle</mat-icon>Registrar</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

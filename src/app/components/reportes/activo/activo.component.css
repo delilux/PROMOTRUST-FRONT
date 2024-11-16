@@ -1,0 +1,81 @@
+/* Contenedor del título */
+.title-container {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .title-container h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Contenedor de la tabla */
+  .table-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: rgb(27, 25, 25);
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Estado de Contrato destacado */
+  td:last-child {
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .table-container {
+      width: 100%;
+      margin: 10px auto;
+    }
+  
+    th, td {
+      padding: 8px 10px;
+    }
+  
+    .title-container h1 {
+      font-size: 20px;
+    }
+  }
+  

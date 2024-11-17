@@ -1,3 +1,24 @@
+<!-- Barra de Navegación -->
+<div class="toolbar">
+  <div class="toolbar-container">
+    <div class="logo">
+      <img
+        src="assets/logo.png"
+        style="height: 40px; width: 40px; margin-right: 10px"
+        alt="PromoTrust Logo"
+      />
+      <span class="app-title">PROMOTRUST</span>
+    </div>
+    <nav class="navigation">
+      <a [routerLink]="['/promohome']">Inicio</a>
+      <a href="#community">Comunidad</a>
+      <a href="#about">Conoce al equipo</a>
+      <a href="#contact">Contáctanos</a>
+    </nav>
+    <a class="btn-login" [routerLink]="['/login']">Iniciar →</a>
+  </div>
+</div>
+
 <div class="container" style="text-align: center;margin:10%">
   <div style="margin:5%"><h1>Registro de Usuario</h1></div>
   <div>
@@ -78,3 +99,21 @@
     </form>
   </div>
 </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>COPYRIGHT © 2024 PromoTrust. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#about">Conócenos</a>
+          <a href="#community">Comunidad</a>
+          <a href="#testimonials">Casos de éxito</a>
+          <a
+            href="https://instagram.com/promotrust24"
+            target="_blank"
+          >
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </footer>

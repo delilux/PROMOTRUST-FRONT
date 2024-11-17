@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { MetodoPago } from '../models/metodopago';
+import { ObtenerPagosPorMetodoPagoDTO } from '../models/obtenerPagosPorMetodoPagoDTO';
 
 const base_url = environment.base
 @Injectable({
@@ -33,6 +34,12 @@ export class MetodopagoService {
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  getobtenerMontoTotalPagosPorContrato():Observable<ObtenerPagosPorMetodoPagoDTO[]>{
+    return this.http.get<ObtenerPagosPorMetodoPagoDTO[]>(
+      `${this.url}/obtenerPagosPorMetodoPago`
+    );
   }
   /*
   getEventosxVenir(): Observable<EventosxVenirDTO[]> {

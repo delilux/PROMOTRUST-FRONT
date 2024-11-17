@@ -1,39 +1,106 @@
-/* Estilos generales */
+/* Contenedor principal */
+body {
+  background-color: #f0f0f0ea;
+  font-family: Arial, sans-serif;
+}
+
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f3f4f6; /* Color de fondo suave */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 40px;
+  width: 70%;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 40px auto;
+}
+
+h1 {
+  color: #7110b7;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+mat-form-field {
+  width: 80%;
+  margin-bottom: 20px;
+  /*background-color: #f0f0f0;*/
+  box-shadow: none;
+  padding: 10px;
+}
+
+input[matInput],
+textarea[matInput] {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: transparent !important;
+  width: 100%;
+}
+
+textarea[matInput] {
+  min-height: 80px;
+}
+
+button {
+  width: 60%;
+  background-color: #d467f8 !important;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #c354e5 !important;
+}
+
+/* Footer Básico */
+.footer {
+  background-color: #6d1fb4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 1024px) {
+  .testimonials-container {
+    justify-content: space-evenly;
+    gap: 40px;
   }
-  
-  /* Título */
-  .title {
-    text-align: center;
-    color: #4a148c; /* Morado */
-    margin-bottom: 20px;
+
+  .testimonial {
+    max-width: 400px;
+    font-size: 1.1rem;
   }
-  
-  /* Estilos de los campos de formulario */
-  .form-field {
-    width: 100%;
+
+  .testimonials h2 {
+    font-size: 3rem;
   }
-  
-  /* Botón de envío */
-  .submit-button {
-    width: 100%;
-    background-color: #4a148c; /* Morado */
-    color: white;
-    font-size: 16px;
-  }
-  
-  .submit-button:hover {
-    background-color: #6a1b9a; /* Morado más claro al pasar el ratón */
-  }
-  
-  /* Estilo para errores */
-  .mat-error {
-    color: red; /* Color de error */
-  }
-  
+}

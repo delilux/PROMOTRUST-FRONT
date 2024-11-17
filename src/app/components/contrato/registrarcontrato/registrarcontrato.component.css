@@ -62,42 +62,42 @@ button:hover {
 
 /* Footer Básico */
 .footer {
-  background-color: #6d1fb4; 
+  background-color: #6d1fb4;
   color: white;
-  text-align: center; 
-  padding: 20px; 
+  text-align: center;
+  padding: 20px;
 }
 
 .footer-content p {
-  margin: 0; 
+  margin: 0;
   font-size: 0.9rem;
 }
 
 .footer-links {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .footer-links a {
   color: white;
-  margin: 0 10px; 
+  margin: 0 10px;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .footer-links a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 /* Estilos generales para pantallas grandes */
 @media (min-width: 1024px) {
   .testimonials-container {
-    justify-content: space-evenly; 
-    gap: 40px; 
+    justify-content: space-evenly;
+    gap: 40px;
   }
 
   .testimonial {
-    max-width: 400px; 
-    font-size: 1.1rem; 
+    max-width: 400px;
+    font-size: 1.1rem;
   }
 
   .testimonials h2 {

@@ -1,19 +1,45 @@
 <div class="container">
-    <h1>Nuevo Contrato</h1>
-    <form [formGroup]="form" (ngSubmit)="crearContrato()">
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Detalles del contrato</mat-label>
-            <input matInput placeholder="Detalles del contrato" formControlName="detallesContrato" />
-        </mat-form-field>
+  <h1>Nuevo Contrato</h1>
+  <form [formGroup]="form" (ngSubmit)="crearContrato()">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Detalles del contrato</mat-label>
+      <input
+        matInput
+        placeholder="Detalles del contrato"
+        formControlName="detallesContrato"
+      />
+    </mat-form-field>
+
+    <!-- Campo de estado no editable -->
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Estado</mat-label>
+      <input
+        matInput
+        placeholder="Estado"
+        formControlName="estado"
+        [readonly]="true"
+      />
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit">
+      Crear contrato
+    </button>
+  </form>
   
-        <!-- Campo de estado no editable -->
-        <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Estado</mat-label>
-            <input matInput placeholder="Estado" formControlName="estado" [readonly]="true" />
-        </mat-form-field>
-  
-        <button mat-flat-button color="primary" type="submit">Crear contrato</button>
-    </form>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>COPYRIGHT © 2024 PromoTrust. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">Conócenos</a>
+      <a href="#community">Comunidad</a>
+      <a href="#testimonials">Casos de éxito</a>
+      <a href="https://instagram.com/promotrust24" target="_blank">
+        Contáctanos
+      </a>
+    </div>
   </div>
-  
-  
+</footer>
+

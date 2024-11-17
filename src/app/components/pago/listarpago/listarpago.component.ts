@@ -32,7 +32,7 @@ export class ListarpagoComponent {
     'monto',
     'fecha_pago',
     'contrato',
-    'metodoPago',
+    'metodopago',
     'accion01',
     'accion02'
   ];

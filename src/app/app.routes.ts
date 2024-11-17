@@ -35,6 +35,10 @@ import { RolesComponent } from './components/roles/roles.component';
 import { InsertarrolesComponent } from './components/roles/insertarroles/insertarroles.component';
 import { ActivoComponent } from './components/reportes/activo/activo.component';
 import { CategoriausuarioComponent } from './components/reportes/categoriausuario/categoriausuario.component';
+import { PagoComponent } from './components/pago/pago.component';
+import { CreaeditapagoComponent } from './components/pago/creaeditapago/creaeditapago.component';
+import { MetodopagoComponent } from './components/metodopago/metodopago.component';
+import { CreaeditametodopagoComponent } from './components/metodopago/creaeditametodopago/creaeditametodopago.component';
 
 export const routes: Routes = [
   {
@@ -224,6 +228,30 @@ export const routes: Routes = [
       },
     ],
     canActivate: [segGuard],
+  },
+  {
+      path:'metodopago',component:MetodopagoComponent,
+      children:[
+          {
+              path:'nuevo',component:CreaeditametodopagoComponent
+          },
+          {
+              path:'ediciones/:id', component:CreaeditametodopagoComponent
+          }
+      ],
+      canActivate: [segGuard], // solo construcciones, se debe agregar a cada uno
+  },
+  {
+      path:'pago',component:PagoComponent,
+      children:[
+          {
+              path:'nuevo',component:CreaeditapagoComponent
+          },
+          {
+              path:'ediciones/:id', component:CreaeditapagoComponent
+          }
+      ],
+      canActivate: [segGuard], // solo construcciones, se debe agregar a cada uno
   },
   //registrar
   {

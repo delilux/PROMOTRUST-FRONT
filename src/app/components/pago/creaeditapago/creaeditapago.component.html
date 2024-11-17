@@ -1,1 +1,69 @@
-<p>creaeditapago works!</p>
+<div class="title-container">
+    <h1>{{ edicion ? 'Editar Pago' : 'Registrar Pago' }}</h1>
+</div>
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+
+        <!-- Código (solo en edición) -->
+        <mat-form-field *ngIf="edicion">
+            <mat-label>Código</mat-label>
+            <input matInput formControlName="codigo" readonly />
+        </mat-form-field>
+        <br />
+
+        <!-- Monto -->
+        <mat-form-field>
+            <mat-label>Monto</mat-label>
+            <input matInput type="number" formControlName="monto" required />
+            <mat-error *ngIf="form.get('monto')?.hasError('required')">
+                El monto es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <!-- Fecha de Pago -->
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de Pago</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha_pago" placeholder="Ingrese fecha de pago" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('fecha_pago')?.hasError('required')">
+                La fecha de pago es obligatoria.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <!-- Contrato -->
+        <mat-form-field>
+            <mat-label>Contrato</mat-label>
+            <mat-select formControlName="contrato_id" required>
+                <mat-option *ngFor="let contrato of contratos" [value]="contrato.id">
+                    {{ contrato.detalle_contrato }} <!-- Usa el atributo relevante de contrato -->
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('contrato_id')?.hasError('required')">
+                El contrato es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <!-- Método de Pago -->
+        <mat-form-field>
+            <mat-label>Método de Pago</mat-label>
+            <mat-select formControlName="metodopago_id" required>
+                <mat-option *ngFor="let metodo of metodosPagos" [value]="metodo.id">
+                    {{ metodo.tipo_metodo_pago }} <!-- Usa el atributo relevante de metodoPago -->
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('metodopago_id')?.hasError('required')">
+                El método de pago es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <!-- Botón Aceptar -->
+        <div class="button-container">
+            <button mat-raised-button color="primary">Aceptar</button>
+        </div>
+    </form>
+</div>

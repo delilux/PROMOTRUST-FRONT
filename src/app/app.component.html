@@ -74,6 +74,14 @@
     <button mat-button [matMenuTriggerFor]="menuContrato">
       <mat-icon>description</mat-icon>Contrato
     </button>
+    <!-- Botón desplegable para Pago -->
+    <button mat-button [matMenuTriggerFor]="menuPago">
+      <mat-icon>payment</mat-icon>Pago
+    </button>
+    <!-- Botón desplegable para Metodo Pago -->
+    <button mat-button [matMenuTriggerFor]="menuMetodoPago">
+      <mat-icon>account_balance_wallet</mat-icon>Metodo de Pago
+    </button>
     <!-- Botón desplegable para Metricas -->
     <button mat-button [matMenuTriggerFor]="menuMetrica">
       <mat-icon>analytics</mat-icon>Metricas
@@ -120,6 +128,26 @@
     <mat-icon>playlist_add_check</mat-icon>Listar
   </button>
   <button mat-menu-item routerLink="/contratousuario/insertar">
+    <mat-icon>playlist_add</mat-icon>Registrar
+  </button>
+</mat-menu>
+
+<!-- Menú Desplegable para Pago -->
+<mat-menu #menuPago="matMenu">
+  <button mat-menu-item routerLink="/pago">
+    <mat-icon>playlist_add_check</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/pago/nuevo">
+    <mat-icon>playlist_add</mat-icon>Registrar
+  </button>
+</mat-menu>
+
+<!-- Menú Desplegable para Metodo Pago -->
+<mat-menu #menuMetodoPago="matMenu">
+  <button mat-menu-item routerLink="/metodopago">
+    <mat-icon>playlist_add_check</mat-icon>Listar
+  </button>
+  <button mat-menu-item routerLink="/metodopago/nuevo">
     <mat-icon>playlist_add</mat-icon>Registrar
   </button>
 </mat-menu>

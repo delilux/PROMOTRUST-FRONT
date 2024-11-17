@@ -1,81 +1,125 @@
 /* Contenedor del título */
 .title-container {
-    text-align: center;
-    margin: 20px 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .title-container h1 {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  /* Contenedor de la tabla */
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.title-container h1 {
+  font-size: 24px;
+  color: #7110b7; /* Color del encabezado adaptado */
+  font-weight: bold;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px; /* Ajustado al diseño */
+  text-align: left;
+  font-size: 0.9rem; /* Tamaño de texto */
+}
+
+/* Encabezado de la tabla */
+th {
+  background-color: #7110b7 !important; /* Fondo morado */
+  color: #ffffff !important; /* Texto blanco */
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid #ddd;
+}
+
+td {
+  font-size: 0.9rem; /* Tamaño de texto */
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estado de Contrato destacado */
+td:last-child {
+  font-weight: bold;
+  color: #7110b7; /* Color morado para destacar */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   .table-container {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1200px;
-    overflow-x: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-  }
-  
-  /* Tabla */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 12px 16px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: rgb(27, 25, 25);
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  td {
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .mat-elevation-z8 {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Estado de Contrato destacado */
-  td:last-child {
-    font-weight: bold;
-    color: #4CAF50;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .table-container {
       width: 100%;
       margin: 10px auto;
-    }
-  
-    th, td {
-      padding: 8px 10px;
-    }
-  
-    .title-container h1 {
-      font-size: 20px;
-    }
   }
-  
+
+  th, td {
+      padding: 10px;
+  }
+
+  .title-container h1 {
+      font-size: 20px;
+  }
+}
+
+/* Footer Básico */
+.footer {
+  background-color: #6d1fb4; /* Color morado oscuro */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 1024px) {
+  .testimonials-container {
+      justify-content: space-evenly;
+      gap: 40px;
+  }
+
+  .testimonial {
+      max-width: 400px;
+      font-size: 1.1rem;
+  }
+
+  .testimonials h2 {
+      font-size: 3rem;
+  }
+}

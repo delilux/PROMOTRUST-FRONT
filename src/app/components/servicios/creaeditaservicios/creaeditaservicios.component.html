@@ -1,62 +1,86 @@
-<div class="container" style="text-align: center;margin:10%">
-    <div style="margin:5%"><h1>Registro de Servicios</h1></div>
-    <div>
-       <!------------------------>
-      <form [formGroup]="form" (submit)="aceptar()">
- <!------------------------>
-        <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>Código</mat-label>
-            <input matInput  formControlName="hcodigo" />
-            
-          </mat-form-field>
-          <br />
-           <!------------------------>
-        <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Ejem. TV" formControlName="hnombre" />
-          </mat-form-field>
-          <br />
+<div class="container" style="text-align: center; margin: 10%;">
+  <div style="margin: 5%;">
+    <h1>Registro de Servicios</h1>
+  </div>
+  <div>
+    <!-- Formulario -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!-- Campo para Código (solo visible en edición) -->
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="hcodigo" readonly />
+      </mat-form-field>
+      <br />
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Precio</mat-label>
-            <input matInput placeholder="Ejem. TV" formControlName="hprecio" />
-          </mat-form-field>
-          <br />
+      <!-- Campo para Nombre -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ejemplo: TV" formControlName="hnombre" />
+      </mat-form-field>
+      <br />
 
-          <mat-form-field>
-            <mat-label>Categoria</mat-label>
-            <mat-select formControlName="hcategoria"> 
-                @for (food of listaCategoria; track food) {
-                <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
-              }
-            </mat-select>
-          </mat-form-field>
-          <br>
+      <!-- Campo para Descripción -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripción</mat-label>
+        <input
+          matInput
+          placeholder="Ejemplo: Descripción del servicio"
+          formControlName="hdescripcion"
+        />
+      </mat-form-field>
+      <br />
 
-          <mat-form-field>
-            <mat-label>Estado</mat-label>
-            <mat-select formControlName="hestado"> 
-                @for (food of listaEstado; track food) {
-                <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
-              }
-            </mat-select>
-          </mat-form-field>
-          <br>
-             
-           <mat-form-field>
-             <mat-label>Contrato</mat-label>
-             <mat-select formControlName="hcontrato">
-               @for (food of listacontrato; track food) {
-               <mat-option [value]="food.id">{{ food.detalle_contrato }}</mat-option>
-               }
-             </mat-select>
-           </mat-form-field>
-           
-           <div>
-             <button mat-button class="custom-button">Registrar</button>
-           </div>
-         </form>
-       </div>
-     </div>
-     
-  
+      <!-- Campo para Precio -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Precio</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Ejemplo: 100.00"
+          formControlName="hprecio"
+        />
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para Categoría -->
+      <mat-form-field>
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="hcategoria">
+          <mat-option *ngFor="let categoria of listaCategoria" [value]="categoria.value">
+            {{ categoria.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para Estado -->
+      <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="hestado">
+          <mat-option *ngFor="let estado of listaEstado" [value]="estado.value">
+            {{ estado.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Campo para Contrato -->
+      <mat-form-field>
+        <mat-label>Contrato</mat-label>
+        <mat-select formControlName="hcontrato">
+          <mat-option *ngFor="let contrato of listaContrato" [value]="contrato.id">
+            {{ contrato.id }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+
+      <!-- Botón para registrar o editar -->
+      <div>
+        <button mat-button class="custom-button" type="submit">
+          {{ edicion ? 'Actualizar' : 'Registrar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

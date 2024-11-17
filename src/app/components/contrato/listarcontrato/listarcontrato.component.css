@@ -51,3 +51,48 @@ body {
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+
+  /* Footer Básico */
+.footer {
+  background-color: #6d1fb4; 
+  color: white;
+  text-align: center; 
+  padding: 20px; 
+}
+
+.footer-content p {
+  margin: 0; 
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 10px; 
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px; 
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; 
+}
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 1024px) {
+  .testimonials-container {
+    justify-content: space-evenly; 
+    gap: 40px; 
+  }
+
+  .testimonial {
+    max-width: 400px; 
+    font-size: 1.1rem; 
+  }
+
+  .testimonials h2 {
+    font-size: 3rem;
+  }
+}

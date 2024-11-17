@@ -1,18 +1,19 @@
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { Component, OnInit } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-  FormControl,
 } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
+import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 import { Servicios } from '../../../models/servicios';
 import { Contrato } from '../../../models/contrato';
@@ -22,17 +23,15 @@ import { ContratoService } from '../../../services/contrato.service';
 @Component({
   selector: 'app-creaeditaservicios',
   standalone: true,
-  providers: [provideNativeDateAdapter()],
-  imports: [
-    ReactiveFormsModule,
+  providers: [],
+  imports: [  MatInputModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
     MatButtonModule,
-    CommonModule,
-    MatFormFieldModule,
-  ],
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    CommonModule,RouterModule],
   templateUrl: './creaeditaservicios.component.html',
   styleUrl: './creaeditaservicios.component.css',
 })
@@ -41,7 +40,6 @@ export class CreaeditaserviciosComponent implements OnInit {
   servicios: Servicios = new Servicios();
   id: number = 0;
   edicion: boolean = false;
-  listacontrato: Contrato[] = [];// Arreglo de contratos
 
   listaCategoria: { value: string; viewValue: string }[] = [
     { value: 'MuyBuena', viewValue: 'Promocion marca' },
@@ -54,7 +52,7 @@ export class CreaeditaserviciosComponent implements OnInit {
     { value: 'Disponible', viewValue: 'En curso' },
     { value: 'SinInformacion', viewValue: 'Finalizado' },
   ];
-
+  listaContrato: Contrato[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -72,21 +70,23 @@ export class CreaeditaserviciosComponent implements OnInit {
       this.init(); // Inicializa datos si es edición
     });
 
+    // Carga lista de contratos
+    this.Cs.list().subscribe((data) => {
+      this.listaContrato = data;
+    });
+
     // Inicializa el formulario
     this.form = this.formBuilder.group({
       hcodigo: [''],
       hnombre: ['', Validators.required],
       hdescripcion: ['', Validators.required],
-      hprecio: ['', [Validators.required, Validators.pattern('^[0-9]+(\\.[0-9]{1,2})?$')]], // Acepta números con 2 decimales
+      hprecio: [
+        '',
+        [Validators.required, Validators.pattern('^[0-9]+(\\.[0-9]{1,2})?$')],
+      ], // Acepta números con 2 decimales
       hcategoria: ['', Validators.required],
       hestado: ['', Validators.required],
       hcontrato: ['', Validators.required],
-    });
-
-    // Carga los contratos
-    this.Cs.list().subscribe((data) => {
-      this.listacontrato = data;
-      console.log('Lista de contratos:', this.listacontrato); // Depuración
     });
   }
 
@@ -99,7 +99,7 @@ export class CreaeditaserviciosComponent implements OnInit {
       this.servicios.precio = this.form.value.hprecio;
       this.servicios.categoria_servic = this.form.value.hcategoria;
       this.servicios.estado_servic = this.form.value.hestado;
-      this.servicios.contrato.id = this.form.value.hcontrato;
+      this.servicios.contrato.id =  this.form.value.hcontrato; // Asigna el contrato correctamente
 
       // Editar o registrar
       if (this.edicion) {

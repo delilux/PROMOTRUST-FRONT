@@ -1,3 +1,68 @@
+/* Toolbar */
+.toolbar {
+  background-color: #6d1fb4;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo .app-title {
+  color: #fff; 
+  font-size: 1.2rem;
+  font-weight: bold; 
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #ddd;
+}
+
+.btn-login {
+  background-color: #fff; 
+  color: #b45dd8; 
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px; 
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #f1f1f1; 
+  transform: translateY(-2px);
+}
+
+/*Forms Registro*/
 .container {
     text-align: center;
     margin: 10%;
@@ -10,7 +75,7 @@
   h1 {
     font-family: 'Roboto', sans-serif; /* Fuente moderna */
     font-weight: bold;
-    color: #3f51b5; /* Azul Material */
+    color: #6d1fb4; /* Azul Material */
     margin-bottom: 20px;
   }
   
@@ -63,3 +128,47 @@
     }
   }
   
+  /* Footer Básico */
+.footer {
+  background-color: #6d1fb4; 
+  color: white;
+  text-align: center; 
+  padding: 20px; 
+}
+
+.footer-content p {
+  margin: 0; 
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 10px; 
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px; 
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline; 
+}
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 1024px) {
+  .testimonials-container {
+    justify-content: space-evenly; 
+    gap: 40px; 
+  }
+
+  .testimonial {
+    max-width: 400px; 
+    font-size: 1.1rem; 
+  }
+
+  .testimonials h2 {
+    font-size: 3rem;
+  }
+}

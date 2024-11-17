@@ -1,27 +1,29 @@
 <div class="container" style="text-align: center; margin: 5%">
-  <div style="margin: 5%"> <h1>Registro de Preguntas</h1> </div>
-  
-  <div>
-      <!-- Formulario para registrar incidencias -->
-      <form [formGroup]="form" (ngSubmit)="aceptar()">
+  <div style="margin: 5%"><h1>Registro de Preguntas</h1></div>
 
-          <!------------------------>
+  <div>
+    <!-- Formulario para registrar incidencias -->
+    <form [formGroup]="form" (ngSubmit)="aceptar()">
+      <!------------------------>
       <mat-form-field class="example-full-width" *ngIf="edicion">
         <mat-label>Código</mat-label>
-        <input matInput  formControlName="Hcodigo" />
-
+        <input matInput formControlName="Hcodigo" />
       </mat-form-field>
       <br />
 
       <!-- Campo para la descripción de la pregunta -->
       <mat-form-field class="example-full-width">
         <mat-label>Descripción de la Pregunta</mat-label>
-        <input matInput placeholder="Ejem. Sala" formControlName="HdescripcionPreguntas" >
+        <input
+          matInput
+          placeholder="Ejem. Pregunta sobre descuento"
+          formControlName="HdescripcionPreguntas"
+        />
       </mat-form-field>
       <br />
-  
+
       <!-- Selección del id de evaluación  -->
-      
+
       <mat-form-field>
         <mat-label>Evaluación</mat-label>
         <mat-select formControlName="HidEvaluacion">
@@ -32,9 +34,8 @@
       </mat-form-field>
       <!-- Botón para registrar -->
       <div>
-
-        <button mat-button class="custom-button">Registrar</button>      </div>
+        <button mat-button class="custom-button">Registrar</button>
+      </div>
     </form>
   </div>
 </div>
-  

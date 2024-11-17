@@ -39,6 +39,8 @@ import { PagoComponent } from './components/pago/pago.component';
 import { CreaeditapagoComponent } from './components/pago/creaeditapago/creaeditapago.component';
 import { MetodopagoComponent } from './components/metodopago/metodopago.component';
 import { CreaeditametodopagoComponent } from './components/metodopago/creaeditametodopago/creaeditametodopago.component';
+import { MontototalpagosxcontratoComponent } from './components/reportes/montototalpagosxcontrato/montototalpagosxcontrato.component';
+import { PagosxmetodopagoComponent } from './components/reportes/pagosxmetodopago/pagosxmetodopago.component';
 
 export const routes: Routes = [
   {
@@ -164,6 +166,14 @@ export const routes: Routes = [
   {
     path:'categoriausuario',
     component:CategoriausuarioComponent
+  },
+  {
+    path:'montototalporcontrato',
+    component:MontototalpagosxcontratoComponent
+  },
+  {
+    path:'pagospormetodopago',
+    component:PagosxmetodopagoComponent
   },
 
 

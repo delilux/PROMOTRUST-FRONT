@@ -79,7 +79,9 @@ export class CreaeditapagoComponent implements OnInit {
       this.pago.monto = this.form.value.monto;
       this.pago.fecha_pago = this.form.value.fecha_pago;
       this.pago.contrato.id = this.form.value.contrato_id;
-      //this.pago.metodoPago.id = this.form.value.metodopago_id;
+      this.pago.metodopago.id = this.form.value.metodopago_id;
+
+      console.log("ptmr  ", this.pago.metodopago.id);
 
       if(this.edicion){
           this.eS.update(this.pago).subscribe((data) => {
@@ -108,7 +110,7 @@ export class CreaeditapagoComponent implements OnInit {
           monto: new FormControl(data.monto),
           fecha_pago: new FormControl(data.fecha_pago),
           contrato_id: new FormControl(data.contrato),
-          //metodopago_id: new FormControl(data.metodoPago),
+          metodopago_id: new FormControl(data.metodopago.id),
         })
       })
     }

@@ -51,8 +51,8 @@
         <mat-form-field>
             <mat-label>Método de Pago</mat-label>
             <mat-select formControlName="metodopago_id" required>
-                <mat-option *ngFor="let metodo of metodosPagos" [value]="metodo.id">
-                    {{ metodo.tipo_metodo_pago }} <!-- Usa el atributo relevante de metodoPago -->
+                <mat-option *ngFor="let metodopago of metodosPagos" [value]="metodopago.id">
+                    {{ metodopago.id }} <!-- Usa el atributo relevante de metodoPago -->
                 </mat-option>
             </mat-select>
             <mat-error *ngIf="form.get('metodopago_id')?.hasError('required')">

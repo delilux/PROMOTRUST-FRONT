@@ -1,9 +1,15 @@
 /* Contenedor principal */
+/* Estilos generales */
 body {
-    background-color: #f0f0f0ea; 
-    font-family: Arial, sans-serif;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el cuerpo siempre ocupe al menos toda la ventana */
+  margin: 0; /* Elimina los márgenes predeterminados del body */
+}
+
+main {
+  flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
+}
   .container {
     margin: 20px auto;
     width: 80%;
@@ -51,3 +57,50 @@ body {
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+
+
+
+/* Footer Básico */
+.footer {
+  background-color: #6d1fb4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos generales para pantallas grandes */
+@media (min-width: 1024px) {
+  .testimonials-container {
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+
+  .testimonial {
+    max-width: 400px;
+    font-size: 1.1rem;
+  }
+
+  .testimonials h2 {
+    font-size: 3rem;
+  }
+}

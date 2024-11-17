@@ -6,5 +6,5 @@ export class Pago {
     monto: number = 0; 
     fecha_pago: Date = new Date(Date.now());
     contrato: Contrato = new Contrato();
-    metodoPago: MetodoPago = new MetodoPago();
+    metodopago: MetodoPago = new MetodoPago();
 }

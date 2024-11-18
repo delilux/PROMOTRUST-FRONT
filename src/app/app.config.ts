@@ -22,8 +22,8 @@ export const appConfig: ApplicationConfig = {
       JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
-          allowedDomains: ['localhost:8081'],
-          disallowedRoutes: ['http://localhost:8081/login/forget'],
+          allowedDomains: ['https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net/'],
+          disallowedRoutes: ['https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net/login/forget'],
         },
       })
     )

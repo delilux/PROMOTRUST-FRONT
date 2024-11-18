@@ -32,7 +32,7 @@ export class LoginService {
   }
 
   login(request: JwtRequest) {
-    return this.http.post('http://localhost:8081/login', request);
+    return this.http.post('https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net/login', request);
   }
   verificar() {
     let token = sessionStorage.getItem('token');

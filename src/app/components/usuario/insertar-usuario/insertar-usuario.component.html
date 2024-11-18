@@ -1,96 +1,65 @@
-<!-- Barra de Navegación -->
-<div class="toolbar">
-  <div class="toolbar-container">
-    <div class="logo">
-      <img
-        src="assets/logo.png"
-        style="height: 40px; width: 40px; margin-right: 10px"
-        alt="PromoTrust Logo"
-      />
-      <span class="app-title">PROMOTRUST</span>
-    </div>
-    <nav class="navigation">
-      <a [routerLink]="['/promohome']">Inicio</a>
-      <a href="#community">Comunidad</a>
-      <a href="#about">Conoce al equipo</a>
-      <a href="#contact">Contáctanos</a>
-    </nav>
-    <a class="btn-login" [routerLink]="['/login']">Iniciar →</a>
-  </div>
-</div>
-
-<div class="container" style="text-align: center;margin:10%">
-  <div style="margin:5%"><h1>Registro de Usuario</h1></div>
+<div class="container" style="text-align: center; margin: 10%">
+  <div style="margin: 5%"><h1>Registro de Usuario</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
-
       <mat-form-field class="example-full-width" *ngIf="edicion">
         <mat-label>Código</mat-label>
-        <input matInput  formControlName="codigo" />
-
+        <input matInput formControlName="codigo" />
       </mat-form-field>
       <br />
 
-
-
-      <mat-form-field class="example-full-width" >
+      <mat-form-field class="example-full-width">
         <mat-label>Nombre </mat-label>
-        <input matInput  formControlName="nombre"/>
-
+        <input matInput formControlName="nombre" />
       </mat-form-field>
       <br />
-
-
-
-
 
       <mat-form-field class="example-full-width">
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="contrasenia">
-        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
-            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="contrasenia"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          type="button"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
         </button>
       </mat-form-field>
       <br />
-     
 
-    
-      <mat-form-field class="example-full-width" >
+      <mat-form-field class="example-full-width">
         <mat-label>Apellido </mat-label>
-        <input matInput  formControlName="apellidos" />
-
+        <input matInput formControlName="apellidos" />
       </mat-form-field>
       <br />
 
-        <mat-form-field class="example-full-width" >
-          <mat-label>Telfono </mat-label>
-          <input matInput  formControlName="telefono" />
-  
-        </mat-form-field>
-        <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Telfono </mat-label>
+        <input matInput formControlName="telefono" />
+      </mat-form-field>
+      <br />
 
+      <mat-form-field class="example-full-width">
+        <mat-label> Correo </mat-label>
+        <input matInput formControlName="correo" />
+      </mat-form-field>
+      <br />
 
-
-
-        <mat-form-field class="example-full-width" >
-          <mat-label> Correo  </mat-label>
-          <input matInput  formControlName="correo" />
-          
-        </mat-form-field>
-        <br />
-
-
-
-
-
-
-        <mat-form-field appearance="fill">
-          <mat-label>Selecciona Tip</mat-label>
-          <mat-select formControlName="tips">@for(food of listatips; track food) {
-             <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona Tip</mat-label>
+        <mat-select formControlName="tips"
+          >@for(food of listatips; track food) {
+          <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
           }
-          </mat-select>
-        </mat-form-field>
+        </mat-select>
+      </mat-form-field>
       <br />
 
       <div>
@@ -99,21 +68,3 @@
     </form>
   </div>
 </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <p>COPYRIGHT © 2024 PromoTrust. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#about">Conócenos</a>
-          <a href="#community">Comunidad</a>
-          <a href="#testimonials">Casos de éxito</a>
-          <a
-            href="https://instagram.com/promotrust24"
-            target="_blank"
-          >
-            Contáctanos
-          </a>
-        </div>
-      </div>
-    </footer>

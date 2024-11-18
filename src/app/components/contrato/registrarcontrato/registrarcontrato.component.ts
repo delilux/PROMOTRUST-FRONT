@@ -50,7 +50,7 @@ export class RegistrarcontratoComponent implements OnInit {
         });
       });
     }
-    this.router.navigate(['fechacontrato']);
+    this.router.navigate(['contrato/contratocreaedita']);
   }
   
 }

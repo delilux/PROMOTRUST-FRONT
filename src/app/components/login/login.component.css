@@ -40,22 +40,31 @@ input[matInput] {
   font-size: 16px;
 }
 
-.custom-button {
-  background-color: #d467f8; 
-  color: #ffffff important; 
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-  box-shadow: none;
+.custom-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.custom-button:hover {
-  background-color: #c156e7; 
+.custom-button {
+  background-color: #d467f8; 
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.boton2 {
+  background-color: #007bff; 
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 /* Barra de navegación */
 .toolbar {
   background-color: #7110b7;

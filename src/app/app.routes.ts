@@ -42,6 +42,7 @@ import { CreaeditametodopagoComponent } from './components/metodopago/creaeditam
 import { MontototalpagosxcontratoComponent } from './components/reportes/montototalpagosxcontrato/montototalpagosxcontrato.component';
 import { PagosxmetodopagoComponent } from './components/reportes/pagosxmetodopago/pagosxmetodopago.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { InfluencerComponent } from './components/servicios/influencer/influencer.component';
 
 export const routes: Routes = [
   {
@@ -192,6 +193,10 @@ export const routes: Routes = [
         path: 'ediciones/:id',
         component: CreaeditaserviciosComponent,
       },
+      {
+        path: 'serviciosinfluencer',
+        component: InfluencerComponent,
+      }
     ],
     canActivate: [segGuard],
   },

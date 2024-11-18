@@ -41,6 +41,7 @@ import { MetodopagoComponent } from './components/metodopago/metodopago.componen
 import { CreaeditametodopagoComponent } from './components/metodopago/creaeditametodopago/creaeditametodopago.component';
 import { MontototalpagosxcontratoComponent } from './components/reportes/montototalpagosxcontrato/montototalpagosxcontrato.component';
 import { PagosxmetodopagoComponent } from './components/reportes/pagosxmetodopago/pagosxmetodopago.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 export const routes: Routes = [
   {
@@ -175,8 +176,10 @@ export const routes: Routes = [
     path:'pagospormetodopago',
     component:PagosxmetodopagoComponent
   },
-
-
+  {
+    path:'signup',
+    component: SignupComponent,
+  },
   {
     path: 'servicio',
     component: ServiciosComponent,

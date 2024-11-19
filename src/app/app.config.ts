@@ -23,7 +23,7 @@ export const appConfig: ApplicationConfig = {
         config: {
           tokenGetter: tokenGetter,
           allowedDomains: ['https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net/'],
-          disallowedRoutes: ['https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net/login/forget'],
+          disallowedRoutes: ['https://promotrustback-fff2c4gdh7dffpb2.canadacentral-01.azurewebsites.net//login/forget'],
         },
       })
     )
